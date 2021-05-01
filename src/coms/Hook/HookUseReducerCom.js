@@ -1,9 +1,9 @@
 import React, { useReducer } from 'react'
-import HookUseReducer from '../../reducers/Hook/HookUseReducer'
+import HookUseReducerReducer from '../../reducers/Hook/HookUseReducerReducer'
 
 const HookUseReducerCom = () => {
 
-  const [state, dispatch] = useReducer(HookUseReducer, { value: 0 })
+  const [state, dispatch] = useReducer(HookUseReducerReducer, { value: 0 })
 
   return (
     <div>
