@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 
-const HookUseStateContCom = () => {
+const HookUseStateCom = () => {
 
   const [ ctr, setCtr ] = useState(0)
 
@@ -12,4 +12,4 @@ const HookUseStateContCom = () => {
   )
 }
 
-export default HookUseStateContCom
+export default HookUseStateCom

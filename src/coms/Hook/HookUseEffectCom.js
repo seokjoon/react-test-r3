@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const HookUseEffectContCom = () => {
+const HookUseEffectCom = () => {
 
   const [foo, setFoo] = useState('')
 
@@ -20,4 +20,4 @@ const HookUseEffectContCom = () => {
   )
 }
 
-export default HookUseEffectContCom
+export default HookUseEffectCom

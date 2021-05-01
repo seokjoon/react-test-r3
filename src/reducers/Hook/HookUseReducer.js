@@ -1,4 +1,4 @@
-function HookReducer(state, action) {
+function HookUseReducer(state, action) {
   switch (action.type) {
     case 'INCREMENT':
       return { value: state.value + 1 }
@@ -9,4 +9,4 @@ function HookReducer(state, action) {
   }
 }
 
-export default HookReducer
+export default HookUseReducer
