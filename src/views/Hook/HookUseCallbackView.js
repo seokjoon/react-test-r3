@@ -1,6 +1,6 @@
-import React, { useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 
-const HookUseMemoCom = () => {
+const HookUseCallbackView = () => {
 
   const [list, setList] = useState([])
   const [num, setNum] = useState('')
@@ -14,25 +14,23 @@ const HookUseMemoCom = () => {
 
   const avg = useMemo(() => _getAvg(list), [list])
 
-  const onChange = e => {
-    setNum(e.target.value)
-  }
+  const onChange = useCallback(e => {
+    setNum(e.target._value)
+  }, []) //컴포넌트가 처음 렌더링될 때만 함수 생성
 
-  const onInsert = () => {
+  const onInsert = useCallback(() => {
     const nextList = list.concat(parseInt(num))
     setList(nextList)
     setNum('')
-  }
+  }, [num, list]) //num 혹은 list가 바뀌었을 때만 함수 생성
 
   return (
     <div>
       <input value={num} onChange={onChange} />
       <button onClick={onInsert}>insert</button>
-
-      {/*<div>{_getAvg(list)}</div>*/}
       <div>{avg}</div>
     </div>
   )
 }
 
-export default HookUseMemoCom
+export default HookUseCallbackView

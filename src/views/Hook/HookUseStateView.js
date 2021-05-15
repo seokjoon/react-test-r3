@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 
-const HookUseStateCom = () => {
+const HookUseStateView = () => {
 
   const [ ctr, setCtr ] = useState(0)
 
@@ -12,4 +12,4 @@ const HookUseStateCom = () => {
   )
 }
 
-export default HookUseStateCom
+export default HookUseStateView

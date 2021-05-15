@@ -1,9 +1,9 @@
 import React from 'react'
-import HookUseInputsCustomCom from './HookUseInputsCustomCom'
+import HookUseInputsCustomHook from '../../hooks/HookUseInputsCustomHook'
 
-const HookUseCustomCom = () => {
+const HookUseCustomView = () => {
 
-  const [state, onChange] = HookUseInputsCustomCom({
+  const [state, onChange] = HookUseInputsCustomHook({
     foo: '',
     bar: '',
   })
@@ -20,4 +20,4 @@ const HookUseCustomCom = () => {
   )
 }
 
-export default HookUseCustomCom
+export default HookUseCustomView

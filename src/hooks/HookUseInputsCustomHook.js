@@ -7,10 +7,12 @@ function reducer(state, action) {
   }
 }
 
-export default function HookUseInputsCustomCom(initForm) {
+function HookUseInputsCustomHook(initForm) {
   const [state, dispatch] = useReducer(reducer, initForm)
   const onChange = e => {
     dispatch(e.target)
   }
   return [state, onChange]
 }
+
+export default HookUseInputsCustomHook

@@ -1,23 +1,23 @@
 import React from 'react'
-import HookUseStateCom from '../../coms/Hook/HookUseStateCom'
-import HookUseEffectCom from '../../coms/Hook/HookUseEffectCom'
-import HookUseReducerCom from '../../coms/Hook/HookUseReducerCom'
-import HookUseReducerInputCom from '../../coms/Hook/HookUseReducerInputCom'
-import HookUseMemoCom from '../../coms/Hook/HookUseMemoCom'
-import HookUseCallbackCom from '../../coms/Hook/HookUseCallbackCom'
-import HookUseCustomCom from '../../coms/Hook/HookUseCustomCom'
+import HookUseStateView from './HookUseStateView'
+import HookUseEffectView from './HookUseEffectView'
+import HookUseReducerView from './HookUseReducerView'
+import HookUseReducerInputView from './HookUseReducerInputView'
+import HookUseMemoView from './HookUseMemoView'
+import HookUseCallbackView from './HookUseCallbackView'
+import HookUseCustomView from './HookUseCustomView'
 
 const HookView = () => {
 
   return (
     <div>
-      <HookUseCustomCom />
-      <HookUseCallbackCom />
-      <HookUseMemoCom />
-      <HookUseReducerInputCom />
-      <HookUseReducerCom />
-      <HookUseEffectCom />
-      <HookUseStateCom />
+      <HookUseCustomView />
+      <HookUseCallbackView />
+      <HookUseMemoView />
+      <HookUseReducerInputView />
+      <HookUseReducerView />
+      <HookUseEffectView />
+      <HookUseStateView />
     </div>
   )
 }

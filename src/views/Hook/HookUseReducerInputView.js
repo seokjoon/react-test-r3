@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
-import hookUseReducerInputReducer from '../../reducers/Hook/hookUseReducerInputReducer'
+import hookUseReducerInputReducer from '../../hooks/reducers/Hook/hookUseReducerInputReducer'
 
-const HookUseReducerInputCom = () => { //useState, setState 다수 반복과 동일 효과
+const HookUseReducerInputView = () => { //useState, setState 다수 반복과 동일 효과
   const [state, dispatch] = useReducer(hookUseReducerInputReducer, {
     foo: '',
     bar: '',
@@ -21,4 +21,4 @@ const HookUseReducerInputCom = () => { //useState, setState 다수 반복과 동
   )
 }
 
-export default HookUseReducerInputCom
+export default HookUseReducerInputView
