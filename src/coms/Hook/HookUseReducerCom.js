@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react'
-import hookUseReducerReducer from '../../hooks/reducers/Hook/hookUseReducerReducer'
+import hookUseReducerReducer from '../../reducers/Hook/hookUseReducerReducer'
 
 const HookUseReducerCom = () => {
 

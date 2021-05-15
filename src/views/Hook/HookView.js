@@ -5,11 +5,13 @@ import HookUseReducerCom from '../../coms/Hook/HookUseReducerCom'
 import HookUseReducerInputCom from '../../coms/Hook/HookUseReducerInputCom'
 import HookUseMemoCom from '../../coms/Hook/HookUseMemoCom'
 import HookUseCallbackCom from '../../coms/Hook/HookUseCallbackCom'
+import HookUseCustomCom from '../../coms/Hook/HookUseCustomCom'
 
 const HookView = () => {
 
   return (
     <div>
+      <HookUseCustomCom />
       <HookUseCallbackCom />
       <HookUseMemoCom />
       <HookUseReducerInputCom />
