@@ -1,10 +1,12 @@
 import React, { Fragment } from 'react'
-import HookView from './Hook/HookView'
+// import HookView from './Hook/HookView'
+import OptimaView from './Optima/OptimaView'
 
 const View = () => {
   return (
     <Fragment>
-      <HookView />
+      <OptimaView />
+      {/*<HookView />*/}
     </Fragment>
   )
 }
