@@ -4,7 +4,7 @@ const OptimaItemsView = () => {
 
   const initItems = () => {
     const outs = [];
-    for(let i = 1; i <= 100; i++) {
+    for(let i = 1; i <= 4; i++) {
       outs.push({
         id: i,
         title: 'title ' + i
@@ -25,6 +25,7 @@ const OptimaItemsView = () => {
 
   return (
     <div>
+      <h3>OptimaItemsView</h3>
       <button onClick={add}>add</button>
       { itemsOut }
     </div>

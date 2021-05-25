@@ -12,6 +12,7 @@ const HookUseCustomView = () => {
 
   return (
     <div>
+      <h3>HookUseCustomView</h3>
       <input name="foo" value={foo} onChange={onChange} />
       <div>{foo}</div>
       <input name="bar" value={bar} onChange={onChange} />

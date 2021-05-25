@@ -7,6 +7,7 @@ const HookUseReducerView = () => {
 
   return (
     <div>
+      <h3>HookUseReducerView</h3>
       { state.value }
       <button onClick={() => dispatch({ type: 'INCREMENT' })}> + 1</button>
       <button onClick={() => dispatch({ type: 'DECREMENT' })}> - 1</button>

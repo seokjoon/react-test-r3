@@ -26,6 +26,7 @@ const HookUseCallbackView = () => {
 
   return (
     <div>
+      <h3>HookUseCallbackView</h3>
       <input value={num} onChange={onChange} />
       <button onClick={onInsert}>insert</button>
       <div>{avg}</div>

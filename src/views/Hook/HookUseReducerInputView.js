@@ -13,6 +13,7 @@ const HookUseReducerInputView = () => { //useState, setState 다수 반복과 �
 
   return (
     <div>
+      <h3>HookUseReducerInputView</h3>
       <input name="foo" value={state.foo} onChange={onChange} />
       <input name="bar" value={state.bar} onChange={onChange} />
       <p>{ state.foo }</p>

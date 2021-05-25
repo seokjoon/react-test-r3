@@ -14,6 +14,7 @@ const HookUseEffectView = () => {
 
   return (
     <div>
+      <h3>HookUseEffectView</h3>
       <button onClick={() => setFoo(foo + ' foo')}>setFoo</button>
       { foo }
     </div>

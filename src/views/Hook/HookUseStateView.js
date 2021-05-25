@@ -6,6 +6,7 @@ const HookUseStateView = () => {
 
   return (
     <Fragment>
+      <h3>HookUseStateView</h3>
       <button onClick={() => setCtr(ctr + 1)}>setCtr</button>
       { ctr }
     </Fragment>
