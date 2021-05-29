@@ -18,6 +18,12 @@ const OptimaListView = () => {
 
   const idNext = useRef(items.length + 1)
 
+  const onDelete = useCallback(id => {
+    //setItems(items.filter(item => item.id !== id))
+    setItems(items => items.filter(item => item.id !== id)) //state 변경 함수에 파라미터로 상태가 아닌 함수를 제공
+    //}, [items])
+  }, [])
+
   const onInsert = useCallback(() => {
     const item = {
       id: idNext.current,
@@ -29,13 +35,7 @@ const OptimaListView = () => {
   //}, [items])
   }, [])
 
-const onDelete = useCallback(id => {
-    //setItems(items.filter(item => item.id !== id))
-    setItems(items => items.filter(item => item.id !== id)) //state 변경 함수에 파라미터로 상태가 아닌 함수를 제공
-  //}, [items])
-  }, [])
-
-const outItems = items.map(item => (
+  const outItems = items.map(item => (
     <OptimaListItemView key={item.id} item={item} onDelete={onDelete}/>
   )).reverse()
 
@@ -48,4 +48,4 @@ const outItems = items.map(item => (
   )
 }
 
-export default OptimaListView
+export default React.memo(OptimaListView)

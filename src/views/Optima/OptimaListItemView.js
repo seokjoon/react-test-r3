@@ -12,4 +12,4 @@ const OptimaListItemView = ({item, onDelete}) => {
 }
 
 //export default OptimaListItemView
-export default React.memo(OptimaListItemView)
+export default React.memo(OptimaListItemView, (prevProps, nextProps) => prevProps.item === nextProps.item)
