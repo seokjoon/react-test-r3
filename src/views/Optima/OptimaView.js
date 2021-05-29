@@ -1,10 +1,10 @@
 import React from 'react'
-import OptimaItemsView from './OptimaItemsView'
+import OptimaListView from './OptimaListView'
 
 const OptimaView = () => {
   return (
     <div>
-      <OptimaItemsView />
+      <OptimaListView />
     </div>
   )
 }
