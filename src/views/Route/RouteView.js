@@ -7,6 +7,7 @@ import RouteIndexView from './RouteIndexView'
 import RouteRouteView from './RouteRouteView'
 import RouteMultiView from './RouteMultiView'
 import RouteUrlParamView from './RouteUrlParamView'
+import RouteUrlQueryView from './RouteUrlQueryView'
 
 const RouteView = () => {
 
@@ -29,6 +30,7 @@ const RouteView = () => {
         <Route path={pathPrefix + '/route'} component={RouteRouteView} exact={true} />
         <Route path={[pathPrefix + '/err', pathPrefix + '/na']} component={RouteMultiView} exact={true} />
         <Route path={pathPrefix + '/urlParam/:foo'} component={RouteUrlParamView} />
+        <Route path={pathPrefix + '/urlQuery'} component={RouteUrlQueryView} />
       </div>
       <div style={{clear: 'both'}}> </div>
     </div>

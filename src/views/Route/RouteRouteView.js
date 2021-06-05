@@ -13,7 +13,7 @@ const RouteRouteView = () => {
         <li> <Link to={pathPrefix + '/err'}>Error</Link> </li>
         <li> <Link to={pathPrefix + '/na'}>NotFound</Link> </li>
         <li> <Link to={pathPrefix + '/urlParam/bar'}>UrlParam</Link> </li>
-        <li> <Link to={pathPrefix + '/urlQuery'}>UrlQuery</Link> </li>
+        <li> <Link to={pathPrefix + '/urlQuery?foo=bar'}>UrlQuery</Link> </li>
       </div>
       <div>
       </div>
