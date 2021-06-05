@@ -11,26 +11,23 @@ import RouteUrlQueryView from './RouteUrlQueryView'
 
 const RouteView = () => {
 
-  const pathPrefix = r3Const.pathPublic
+  const path = r3Const.pathPublic
 
   return (
     <div>
       <div style={{float:'left', width: '30%',}}>
         <ul>
-          <li> <Link to={pathPrefix}>Index</Link> </li>
-          <li> <Link to={pathPrefix + '/hook'}>Hook</Link> </li>
-          <li> <Link to={pathPrefix + '/optima'}>Optima</Link> </li>
-          <li> <Link to={pathPrefix + '/route'}>Route</Link> </li>
+          <li> <Link to={path}>Index</Link> </li>
+          <li> <Link to={path + '/hook'}>Hook</Link> </li>
+          <li> <Link to={path + '/optima'}>Optima</Link> </li>
+          <li> <Link to={path + '/route'}>Route</Link> </li>
         </ul>
       </div>
       <div style={{float:'left', width: '70%',}}>
-        <Route path={pathPrefix + '/'} component={RouteIndexView} exact={true} />
-        <Route path={pathPrefix + '/hook'} component={HookView} exact={true} />
-        <Route path={pathPrefix + '/optima'} component={OptimaView} exact={true} />
-        <Route path={pathPrefix + '/route'} component={RouteRouteView} exact={true} />
-        <Route path={[pathPrefix + '/err', pathPrefix + '/na']} component={RouteMultiView} exact={true} />
-        <Route path={pathPrefix + '/urlParam/:foo'} component={RouteUrlParamView} />
-        <Route path={pathPrefix + '/urlQuery'} component={RouteUrlQueryView} />
+        <Route path={path + '/'} component={RouteIndexView} exact />
+        <Route path={path + '/hook'} component={HookView} />
+        <Route path={path + '/optima'} component={OptimaView} />
+        <Route path={path + '/route'} component={RouteRouteView} />
       </div>
       <div style={{clear: 'both'}}> </div>
     </div>

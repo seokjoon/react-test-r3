@@ -1,21 +1,27 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import r3Const from '../../helpers/r3Const'
+import RouteMultiView from './RouteMultiView'
+import RouteUrlParamView from './RouteUrlParamView'
+import RouteUrlQueryView from './RouteUrlQueryView'
 
 const RouteRouteView = () => {
 
-  const pathPrefix = r3Const.pathPublic
+  const path = r3Const.pathPublic + '/route'
 
   return (
     <div>
       <h3>RouteRouteView</h3>
       <div>
-        <li> <Link to={pathPrefix + '/err'}>Error</Link> </li>
-        <li> <Link to={pathPrefix + '/na'}>NotFound</Link> </li>
-        <li> <Link to={pathPrefix + '/urlParam/bar'}>UrlParam</Link> </li>
-        <li> <Link to={pathPrefix + '/urlQuery?foo=bar'}>UrlQuery</Link> </li>
+        <li> <Link to={path + '/err'}>Error</Link> </li>
+        <li> <Link to={path + '/na'}>NotFound</Link> </li>
+        <li> <Link to={path + '/urlParam/bar'}>UrlParam</Link> </li>
+        <li> <Link to={path + '/urlQuery?foo=bar'}>UrlQuery</Link> </li>
       </div>
       <div>
+        <Route path={[path + '/err', path + '/na']} component={RouteMultiView} />
+        <Route path={path + '/urlParam/:foo'} component={RouteUrlParamView} />
+        <Route path={path + '/urlQuery'} component={RouteUrlQueryView} />
       </div>
     </div>
   )
