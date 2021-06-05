@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { List } from 'react-virtualized'
 
-const OptimaScrollView = () => {
+const OptimaScrollV = () => {
 
   const initItems = () => {
     const outs = []
@@ -24,7 +24,7 @@ const OptimaScrollView = () => {
 
   return (
     <div>
-      <h3>OptimaScrollView</h3>
+      <h3>OptimaScrollV</h3>
       <List
         width={300}
         height={100}
@@ -38,4 +38,4 @@ const OptimaScrollView = () => {
   )
 }
 
-export default OptimaScrollView
+export default OptimaScrollV

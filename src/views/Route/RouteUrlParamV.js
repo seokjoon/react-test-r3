@@ -1,15 +1,15 @@
 import React from 'react'
 
-const RouteUrlParamView = ({match}) => {
+const RouteUrlParamV = ({match}) => {
 
   const {foo} = match.params
 
   return (
     <div>
-      <h3>RouteUrlParamView</h3>
+      <h3>RouteUrlParamV</h3>
       {foo}
     </div>
   )
 }
 
-export default RouteUrlParamView
+export default RouteUrlParamV

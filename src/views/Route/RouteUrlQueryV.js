@@ -1,7 +1,7 @@
 import React from 'react'
 import qs from 'qs'
 
-const RouteUrlQueryView = ({ location }) => {
+const RouteUrlQueryV = ({ location }) => {
 
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true, // '?' 생략
@@ -9,10 +9,10 @@ const RouteUrlQueryView = ({ location }) => {
 
   return (
     <div>
-      <h3>RouteUrlQueryView</h3>
+      <h3>RouteUrlQueryV</h3>
       {query.foo}
     </div>
   )
 }
 
-export default RouteUrlQueryView
+export default RouteUrlQueryV

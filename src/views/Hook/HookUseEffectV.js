@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const HookUseEffectView = () => {
+const HookUseEffectV = () => {
 
   const [foo, setFoo] = useState('')
 
@@ -14,11 +14,11 @@ const HookUseEffectView = () => {
 
   return (
     <div>
-      <h3>HookUseEffectView</h3>
+      <h3>HookUseEffectV</h3>
       <button onClick={() => setFoo(foo + ' foo')}>setFoo</button>
       { foo }
     </div>
   )
 }
 
-export default HookUseEffectView
+export default HookUseEffectV

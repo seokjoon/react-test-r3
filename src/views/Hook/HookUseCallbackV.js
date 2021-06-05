@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react'
 
-const HookUseCallbackView = () => {
+const HookUseCallbackV = () => {
 
   const [list, setList] = useState([])
   const [num, setNum] = useState('')
@@ -26,7 +26,7 @@ const HookUseCallbackView = () => {
 
   return (
     <div>
-      <h3>HookUseCallbackView</h3>
+      <h3>HookUseCallbackV</h3>
       <input value={num} onChange={onChange} />
       <button onClick={onInsert}>insert</button>
       <div>{avg}</div>
@@ -34,4 +34,4 @@ const HookUseCallbackView = () => {
   )
 }
 
-export default HookUseCallbackView
+export default HookUseCallbackV

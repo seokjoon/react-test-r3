@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react'
-import OptimaListItemView from './OptimaListItemView'
+import OptimaListItemV from './OptimaListItemV'
 
-const OptimaListView = () => {
+const OptimaListV = () => {
 
   const initItems = () => {
     const outs = []
@@ -36,16 +36,16 @@ const OptimaListView = () => {
   }, [])
 
   const outItems = items.map(item => (
-    <OptimaListItemView key={item.id} item={item} onDelete={onDelete}/>
+    <OptimaListItemV key={item.id} item={item} onDelete={onDelete}/>
   )).reverse()
 
   return (
     <div>
-      <h3>OptimaItemsView</h3>
+      <h3>OptimaItemsV</h3>
       <button onClick={onInsert}>add</button>
       {outItems}
     </div>
   )
 }
 
-export default React.memo(OptimaListView)
+export default React.memo(OptimaListV)

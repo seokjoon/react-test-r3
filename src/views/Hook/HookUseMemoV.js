@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 
-const HookUseMemoView = () => {
+const HookUseMemoV = () => {
 
   const [list, setList] = useState([])
   const [num, setNum] = useState('')
@@ -26,7 +26,7 @@ const HookUseMemoView = () => {
 
   return (
     <div>
-      <h3>HookUseMemoView</h3>
+      <h3>HookUseMemoV</h3>
       <input value={num} onChange={onChange} />
       <button onClick={onInsert}>insert</button>
 
@@ -36,4 +36,4 @@ const HookUseMemoView = () => {
   )
 }
 
-export default HookUseMemoView
+export default HookUseMemoV

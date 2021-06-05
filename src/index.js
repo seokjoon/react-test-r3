@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import View from './views/View'
+import V from './views/V'
 import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
@@ -11,7 +11,7 @@ ReactDOM.render(
   //   <App />
   // </React.StrictMode}>,
   <BrowserRouter>
-    <View />
+    <V />
   </BrowserRouter>,
   document.getElementById('root')
 );

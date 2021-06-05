@@ -1,7 +1,7 @@
 import React from 'react'
 import HookUseInputsCustomHook from '../../hooks/HookUseInputsCustomHook'
 
-const HookUseCustomView = () => {
+const HookUseCustomV = () => {
 
   const [state, onChange] = HookUseInputsCustomHook({
     foo: '',
@@ -12,7 +12,7 @@ const HookUseCustomView = () => {
 
   return (
     <div>
-      <h3>HookUseCustomView</h3>
+      <h3>HookUseCustomV</h3>
       <input name="foo" value={foo} onChange={onChange} />
       <div>{foo}</div>
       <input name="bar" value={bar} onChange={onChange} />
@@ -21,4 +21,4 @@ const HookUseCustomView = () => {
   )
 }
 
-export default HookUseCustomView
+export default HookUseCustomV
