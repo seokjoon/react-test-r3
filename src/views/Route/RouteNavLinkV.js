@@ -1,7 +1,6 @@
 import React from 'react'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import r3Const from '../../helpers/r3Const'
-import RouteFooV from './RouteFooV'
 
 const RouteNavLinkV = () => {
 

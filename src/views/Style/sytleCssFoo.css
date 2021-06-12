@@ -1,0 +1,10 @@
+.foo {
+    text-align: center;
+}
+.foo .bar {
+    text-align: center;
+}
+
+.bar {
+    text-align: right;
+}
