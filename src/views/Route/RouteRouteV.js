@@ -6,6 +6,8 @@ import RouteUrlParamV from './RouteUrlParamV'
 import RouteUrlQueryV from './RouteUrlQueryV'
 import RouteHistoryV from './RouteHistoryV'
 import RouteWithRouterV from './RouteWithRouterV'
+import RouteSwitchV from './RouteSwitchV'
+import RouteNavLinkV from './RouteNavLinkV'
 
 const RouteRouteV = () => {
 
@@ -15,20 +17,26 @@ const RouteRouteV = () => {
     <div>
       <h3>RouteRouteV</h3>
       <div>
-        <li> <Link to={path + '/err'}>Error</Link> </li>
-        <li> <Link to={path + '/history'}>History</Link> </li>
-        <li> <Link to={path + '/na'}>NotFound</Link> </li>
-        <li> <Link to={path + '/urlParam/bar'}>UrlParam</Link> </li>
-        <li> <Link to={path + '/urlQuery?foo=bar'}>UrlQuery</Link> </li>
+        <ul>
+          <li><Link to={path + '/err'}>Error</Link></li>
+          <li><Link to={path + '/history'}>History</Link></li>
+          <li><Link to={path + '/na'}>NotFound</Link></li>
+          <li><Link to={path + '/navLink'}>NavLink</Link></li>
+          <li><Link to={path + '/switch'}>Switch</Link></li>
+          <li><Link to={path + '/urlParam/bar'}>UrlParam</Link></li>
+          <li><Link to={path + '/urlQuery?foo=bar'}>UrlQuery</Link></li>
+        </ul>
       </div>
       <div>
-        <Route path={[path + '/err', path + '/na']} component={RouteMultiV} />
-        <Route path={path + '/history'} component={RouteHistoryV} />
-        <Route path={path + '/urlParam/:foo'} component={RouteUrlParamV} />
-        <Route path={path + '/urlQuery'} component={RouteUrlQueryV} />
+        <Route path={[path + '/err', path + '/na']} component={RouteMultiV}/>
+        <Route path={path + '/history'} component={RouteHistoryV}/>
+        <Route path={path + '/navLink'} component={RouteNavLinkV} />
+        <Route path={path + '/switch'} component={RouteSwitchV}/>
+        <Route path={path + '/urlParam/:foo'} component={RouteUrlParamV}/>
+        <Route path={path + '/urlQuery'} component={RouteUrlQueryV}/>
       </div>
       <div>
-        <RouteWithRouterV />
+        <RouteWithRouterV/>
       </div>
     </div>
   )
