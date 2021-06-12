@@ -5,6 +5,7 @@ import RouteMultiV from './RouteMultiV'
 import RouteUrlParamV from './RouteUrlParamV'
 import RouteUrlQueryV from './RouteUrlQueryV'
 import RouteHistoryV from './RouteHistoryV'
+import RouteWithRouterV from './RouteWithRouterV'
 
 const RouteRouteV = () => {
 
@@ -25,6 +26,9 @@ const RouteRouteV = () => {
         <Route path={path + '/history'} component={RouteHistoryV} />
         <Route path={path + '/urlParam/:foo'} component={RouteUrlParamV} />
         <Route path={path + '/urlQuery'} component={RouteUrlQueryV} />
+      </div>
+      <div>
+        <RouteWithRouterV />
       </div>
     </div>
   )
