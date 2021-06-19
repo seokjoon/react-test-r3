@@ -23,9 +23,13 @@ const ImmutableImmerV = () => {
   }
 
   const onSetBarImmer = () => {
-    setBar(produce(foo, param => {
-      param.a.c.f = Date.now()
+    setBar(produce(foo, foo => {
+      foo.a.c.f = Date.now()
     }))
+  }
+
+  const onSetBarImmerFunc = () => {
+    setBar(produce(foo => { foo.a.c.f = Date.now() }))
   }
 
   return (
@@ -35,6 +39,7 @@ const ImmutableImmerV = () => {
       <div>{JSON.stringify(bar)}</div>
       <div> <button onClick={onSetBar}>setBar</button> </div>
       <div> <button onClick={onSetBarImmer}>setBarImmer</button> </div>
+      <div> <button onClick={onSetBarImmerFunc}>setBarImmerFunc</button> </div>
     </div>
   )
 }
