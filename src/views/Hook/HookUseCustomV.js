@@ -1,9 +1,9 @@
 import React from 'react'
-import HookUseInputsCustomHook from '../../hooks/HookUseInputsCustomHook'
+import useInputsCustomHook from '../../hooks/useInputsCustomHook'
 
 const HookUseCustomV = () => {
 
-  const [state, onChange] = HookUseInputsCustomHook({
+  const [state, onChange] = useInputsCustomHook({
     foo: '',
     bar: '',
   })

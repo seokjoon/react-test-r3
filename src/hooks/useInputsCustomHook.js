@@ -7,7 +7,7 @@ function reducer(state, action) {
   }
 }
 
-function HookUseInputsCustomHook(initForm) {
+function useInputsCustomHook(initForm) {
   const [state, dispatch] = useReducer(reducer, initForm)
   const onChange = e => {
     dispatch(e.target)
@@ -15,4 +15,4 @@ function HookUseInputsCustomHook(initForm) {
   return [state, onChange]
 }
 
-export default HookUseInputsCustomHook
+export default useInputsCustomHook
