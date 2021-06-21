@@ -19,7 +19,7 @@ function usePromiseCustomHook(promiseCreator, deps) {
       setLoading(false)
     }
     process()
-  }, deps)
+  }, [deps, promiseCreator])
   return [err, loading, resolved]
 }
 

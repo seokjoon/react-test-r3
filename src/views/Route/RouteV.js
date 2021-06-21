@@ -8,6 +8,7 @@ import RouteRouteV from './RouteRouteV'
 import StyleV from '../Style/StyleV'
 import ImmutableV from '../Immutable/ImmutableV'
 import AsyncV from '../Async/AsyncV'
+import ContextV from '../Context/ContextV'
 
 const RouteV = () => {
 
@@ -19,6 +20,7 @@ const RouteV = () => {
         <ul>
           <li> <Link to={path}>Index</Link> </li>
           <li> <Link to={path + '/async'}>Async</Link> </li>
+          <li> <Link to={path + '/context'}>Context</Link> </li>
           <li> <Link to={path + '/hook'}>Hook</Link> </li>
           <li> <Link to={path + '/immutable'}>Immutable</Link> </li>
           <li> <Link to={path + '/optima'}>Optima</Link> </li>
@@ -29,6 +31,7 @@ const RouteV = () => {
       <div style={{float:'left', width: '70%',}}>
         <Route path={path + '/'} component={RouteIndexV} exact />
         <Route path={path + '/async'} component={AsyncV} />
+        <Route path={path + '/context'} component={ContextV} />
         <Route path={path + '/hook'} component={HookV} />
         <Route path={path + '/immutable'} component={ImmutableV} />
         <Route path={path + '/optima'} component={OptimaV} />
