@@ -9,6 +9,7 @@ import StyleV from '../Style/StyleV'
 import ImmutableV from '../Immutable/ImmutableV'
 import AsyncV from '../Async/AsyncV'
 import ContextV from '../Context/ContextV'
+import ReduxV from '../Redux/ReduxV'
 
 const RouteV = () => {
 
@@ -24,6 +25,7 @@ const RouteV = () => {
           <li> <Link to={path + '/hook'}>Hook</Link> </li>
           <li> <Link to={path + '/immutable'}>Immutable</Link> </li>
           <li> <Link to={path + '/optima'}>Optima</Link> </li>
+          <li> <Link to={path + '/redux'}>Redux</Link> </li>
           <li> <Link to={path + '/route'}>Route</Link> </li>
           <li> <Link to={path + '/style'}>Style</Link> </li>
         </ul>
@@ -35,6 +37,7 @@ const RouteV = () => {
         <Route path={path + '/hook'} component={HookV} />
         <Route path={path + '/immutable'} component={ImmutableV} />
         <Route path={path + '/optima'} component={OptimaV} />
+        <Route path={path + '/redux'} component={ReduxV} />
         <Route path={path + '/route'} component={RouteRouteV} />
         <Route path={path + '/style'} component={StyleV} />
       </div>
