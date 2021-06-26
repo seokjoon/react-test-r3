@@ -1,9 +1,9 @@
 import React from 'react'
-import FooCtx from '../../contexts/ContextFooCtx'
+import ContextFooCtx from '../../contexts/ContextFooCtx'
 
 const ContextFooComV = () => {
   return (
-    <FooCtx.Consumer>
+    <ContextFooCtx.Consumer>
       {value => (
         <div
           style={{
@@ -13,7 +13,7 @@ const ContextFooComV = () => {
           }}
         />
       )}
-    </FooCtx.Consumer>
+    </ContextFooCtx.Consumer>
   )
 }
 

@@ -1,5 +1,5 @@
 import { createContext } from 'react'
 
-const FooCtx = createContext({ color: 'gray' })
+const ContextFooCtx = createContext({ color: 'gray' })
 
-export default FooCtx
+export default ContextFooCtx

@@ -1,6 +1,6 @@
 import React from 'react'
 import ContextFooComV from './ContextFooComV'
-import FooCtx from '../../contexts/ContextFooCtx'
+import ContextFooCtx from '../../contexts/ContextFooCtx'
 
 const ContextFooV = () => {
   return (
@@ -10,9 +10,9 @@ const ContextFooV = () => {
         <ContextFooComV />
       </div>
       <div>
-        <FooCtx.Provider value={{color: 'green'}}>
+        <ContextFooCtx.Provider value={{color: 'green'}}>
           <ContextFooComV />
-        </FooCtx.Provider>
+        </ContextFooCtx.Provider>
       </div>
     </div>
   )
