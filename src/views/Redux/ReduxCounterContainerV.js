@@ -12,14 +12,14 @@ import { decrease, increase } from '../../redux/ducks/reduxCounterRedux'
 //   decrease,
 //   increase,
 // }, dispatch)
-const mapDispatchToProps = {
-  decrease,
-  increase,
-}
-
-const mapStateToProps = state => ({
-  num: state.reduxCounterRedux.num,
-})
+// const mapDispatchToProps = {
+//   decrease,
+//   increase,
+// }
+//
+// const mapStateToProps = state => ({
+//   num: state.reduxCounterRedux.num,
+// })
 
 const ReduxCounterContainerV = ({ num, decrease, increase }) => {
   return (
@@ -27,4 +27,13 @@ const ReduxCounterContainerV = ({ num, decrease, increase }) => {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReduxCounterContainerV)
+//export default connect(mapStateToProps, mapDispatchToProps)(ReduxCounterContainerV)
+export default connect(
+  state => ({
+    num: state.reduxCounterRedux.num,
+  }),
+  {
+    decrease,
+    increase,
+  },
+)(ReduxCounterContainerV)

@@ -3,25 +3,38 @@ import ReduxTodoListItemV from './ReduxTodoListItemV'
 
 const ReduxTodoListV = ({
   input,
-  todos,
   onChangeInput,
   onInsert,
   onRemove,
   onToggle,
+  todos,
 }) => {
 
-  const onSubmit = e => {
+  const onChange = e => onChangeInput(e.target.value)
+
+  const onSubmit = e => { console.log(input)
     e.preventDefault()
+    onInsert(input)
+    onChangeInput('')
   }
+
+  const outTodoItems = todos.map(todo => (
+    <ReduxTodoListItemV
+      key={todo.id}
+      onRemove={onRemove}
+      onToggle={onToggle}
+      todo={todo}
+    />
+  ))
 
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <input />
+        <input value={input} onChange={onChange} />
         <button type="submit">add</button>
       </form>
       <div>
-        <ReduxTodoListItemV />
+        { outTodoItems }
       </div>
     </div>
   )

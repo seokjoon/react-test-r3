@@ -29,7 +29,6 @@ export const toggle = id => ({
   id,
 })
 
-
 const initState = {
   input: '',
   todos: [
@@ -41,7 +40,7 @@ const initState = {
   ],
 }
 
-function todos(state = initState, action) {
+function reduxTodoRedux(state = initState, action) {
   switch (action.type) {
     case CHANGE_INPUT:
       return {
@@ -68,4 +67,4 @@ function todos(state = initState, action) {
   }
 }
 
-export default todos
+export default reduxTodoRedux
