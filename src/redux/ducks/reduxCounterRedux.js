@@ -1,4 +1,4 @@
-import { createAction, handleAction } from 'redux-actions'
+import { createAction, handleActions } from 'redux-actions'
 
 const DECREASE = 'reduxCounterRedux/DECREASE'
 const INCREASE = 'reduxCounterRedux/INCREASE'
@@ -26,7 +26,7 @@ const initState = {
 //       return state
 //   }
 // }
-const reduxCounterRedux = handleAction(
+const reduxCounterRedux = handleActions(
   {
     [DECREASE]: (state, action) => ({ num: state.num - 1 }),
     [INCREASE]: (state, action) => ({ num: state.num + 1 }),
