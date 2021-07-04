@@ -5,15 +5,24 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import V from './views/V'
 import { BrowserRouter } from 'react-router-dom'
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
 import rootReducer from './redux/ducks'
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
+//import { createLogger } from 'redux-logger/src'
+//import middlewareCounterMiddleware from './middleware/middlewareCounterMiddleware'
+import ReduxThunk from 'redux-thunk'
 
 //const store = createStore(rootReducer)
 const store = createStore(
   rootReducer,
-  composeWithDevTools()
+  composeWithDevTools(
+    applyMiddleware(
+      //createLogger(),
+      //middlewareCounterMiddleware,
+      ReduxThunk,
+    ),
+  ),
 )
 
 ReactDOM.render(
