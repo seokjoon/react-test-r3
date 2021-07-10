@@ -27,8 +27,11 @@ const MiddlewareApiThunkContainerV = ({
 }
 
 export default connect(
-  ({ middlewareApiThunkRedux }) => ({
-    loadingPost: middlewareApiThunkRedux.GET_POST,
+  ({ middlewareApiThunkRedux, r3ApiLoadingRedux }) => ({
+    //loadingPost: middlewareApiThunkRedux.GET_POST,
+    loadingPost: r3ApiLoadingRedux.loadingPost,
+    //loadingUsers: middlewareApiThunkRedux.GET_USERS,
+    loadingUsers: r3ApiLoadingRedux.loadingUsers,
     post: middlewareApiThunkRedux.post,
     users: middlewareApiThunkRedux.users,
   }),
