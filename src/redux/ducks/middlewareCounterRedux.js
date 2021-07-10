@@ -9,8 +9,8 @@ export const increase = createAction(INCREASE)
 const initState = 0
 
 const middlewareCounterRedux = handleActions({
-  [DECREASE]: state => state + 1,
-  [INCREASE]: state => state - 1,
+  [DECREASE]: state => state - 1,
+  [INCREASE]: state => state + 1,
 }, initState)
 
 export default middlewareCounterRedux

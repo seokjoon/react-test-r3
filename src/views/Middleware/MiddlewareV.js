@@ -1,6 +1,7 @@
 import React from 'react'
 import r3Const from '../../helpers/r3Const'
 import { Link, Route } from 'react-router-dom'
+import MiddlewareCounterContainerV from './MiddlewareCounterContainerV'
 import MiddlewareCounterThunkContainerV from './MiddlewareCounterThunkContainerV'
 
 const MiddlewareV = () => {
@@ -15,6 +16,7 @@ const MiddlewareV = () => {
         <li><Link to={path + '/counterThunk'}>MiddlewareCounterThunk</Link></li>
       </ul>
       <div>
+        <div><Route path={path + '/counter'} component={MiddlewareCounterContainerV} /></div>
         <div><Route path={path + '/counterThunk'} component={MiddlewareCounterThunkContainerV} /></div>
       </div>
     </div>
