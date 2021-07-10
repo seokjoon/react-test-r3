@@ -5,7 +5,7 @@ const r3Thunk = {
    * @param type
    * @param req: axios req
    */
-  createReg: (type, req) => {
+  createReq: (type, req) => {
     const FAIL = `${type}_FAIL`
     const SUCCESS = `${type}_SUCCESS`
 

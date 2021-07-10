@@ -27,7 +27,7 @@ const GET_USERS_SUCCESS = 'middlewareApiThunk/GET_USERS_SUCCESS'
     throw e
   }
 } */
-export const getPost = r3Thunk.createReg(GET_POST, r3Api.middleware.getPost)
+export const getPost = r3Thunk.createReq(GET_POST, r3Api.middleware.getPost)
 
 /* export const getUsers = () => async dispatch => {
   dispatch({ type: GET_USERS })
@@ -46,7 +46,7 @@ export const getPost = r3Thunk.createReg(GET_POST, r3Api.middleware.getPost)
     throw  e
   }
 } */
-export const getUsers = r3Thunk.createReg(GET_USERS, r3Api.middleware.getUsers)
+export const getUsers = r3Thunk.createReq(GET_USERS, r3Api.middleware.getUsers)
 
 const initState = {
   // loading: {
