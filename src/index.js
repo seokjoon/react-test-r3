@@ -6,24 +6,28 @@ import reportWebVitals from './reportWebVitals';
 import V from './views/V'
 import { BrowserRouter } from 'react-router-dom'
 import { applyMiddleware, createStore } from 'redux'
-import rootReducer from './redux/ducks'
+import rootReducer, { rootSaga } from './redux/ducks'
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 //import { createLogger } from 'redux-logger/src'
 //import middlewareCounterMiddleware from './middleware/middlewareCounterMiddleware'
 import ReduxThunk from 'redux-thunk'
+import createMiddlewareSaga from 'redux-saga'
 
 //const store = createStore(rootReducer)
+const middlewareSaga = createMiddlewareSaga()
 const store = createStore(
   rootReducer,
   composeWithDevTools(
     applyMiddleware(
       //createLogger(),
       //middlewareCounterMiddleware,
+      middlewareSaga,
       ReduxThunk,
     ),
   ),
 )
+middlewareSaga.run(rootSaga)
 
 ReactDOM.render(
   // <React.StrictMode>

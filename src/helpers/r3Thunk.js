@@ -11,27 +11,21 @@ const r3Thunk = {
 
     return params => async dispatch => {
       dispatch({ type })
-
       dispatch(r3ApiLoadingReduxStart(type))
-
       try {
         const res = await req(params)
         dispatch({
           payload: res.data,
           type: SUCCESS,
         })
-
         dispatch(r3ApiLoadingReduxStop(type))
-
       } catch (e) {
         dispatch({
           error: true,
           payload: e,
           type: FAIL,
         })
-
         dispatch(r3ApiLoadingReduxStart(type))
-
         throw e
       }
     }
