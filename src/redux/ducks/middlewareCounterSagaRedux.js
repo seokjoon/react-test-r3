@@ -1,31 +1,31 @@
 import { createAction, handleActions } from 'redux-actions'
 import { delay, put, takeEvery, takeLatest, } from 'redux-saga/effects'
 
-const DECREASE = 'middlewareCounterAsync/DECREASE'
-const INCREASE = 'middlewareCounterAsync/INCREASE'
+const DECREASE = 'middlewareCounterSaga/DECREASE'
+const INCREASE = 'middlewareCounterSaga/INCREASE'
 
-const DECREASE_ASYNC = 'middlewareCounterAsync/DECREASE_ASYNC'
-const INCREASE_ASYNC = 'middlewareCounterAsync/INCREASE_ASYNC'
+const DECREASE_SAGA = 'middlewareCounterSaga/DECREASE_SAGA'
+const INCREASE_SAGA = 'middlewareCounterSaga/INCREASE_SAGA'
 
 export const decrease = createAction(DECREASE, () => undefined)
 export const increase = createAction(INCREASE, () => undefined)
 
-export const decreaseAsync = createAction(DECREASE_ASYNC, () => undefined)
-export const increaseAsync = createAction(INCREASE_ASYNC, () => undefined)
+export const decreaseSaga = createAction(DECREASE_SAGA, () => undefined)
+export const increaseSaga = createAction(INCREASE_SAGA, () => undefined)
 
-function* decreaseSaga() {
+function* decreaseAsync() {
   yield delay(1000)
   yield put(decrease())
 }
 
-function* increaseSaga() {
+function* increaseAsync() {
   yield delay(1000)
   yield put(increase())
 }
 
 export function* middlewareCounterSaga() {
-  yield takeEvery(INCREASE_ASYNC, increaseSaga)
-  yield takeLatest(DECREASE_ASYNC, decreaseSaga)
+  yield takeEvery(INCREASE_SAGA, increaseAsync)
+  yield takeLatest(DECREASE_SAGA, decreaseAsync)
 }
 
 const initState = 0

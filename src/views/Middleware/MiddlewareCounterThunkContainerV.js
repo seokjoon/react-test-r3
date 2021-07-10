@@ -1,11 +1,11 @@
 import React from 'react'
 import MiddlewareCounterThunkV from './MiddlewareCounterThunkV'
 import { connect } from 'react-redux'
-import { decreaseAsync, increaseAsync } from '../../redux/ducks/middlewareCounterThunkRedux'
+import { decreaseThunk, increaseThunk } from '../../redux/ducks/middlewareCounterThunkRedux'
 
-const MiddlewareCounterThunkContainerV = ({ decreaseAsync, increaseAsync, num, }) => {
+const MiddlewareCounterThunkContainerV = ({ decreaseThunk, increaseThunk, num, }) => {
   return (
-    <MiddlewareCounterThunkV onDecrease={decreaseAsync} onIncrease={increaseAsync} num={num} />
+    <MiddlewareCounterThunkV onDecrease={decreaseThunk} onIncrease={increaseThunk} num={num} />
   )
 }
 
@@ -14,7 +14,7 @@ export default connect(
     num: state.middlewareCounterThunkRedux,
   }),
   {
-    decreaseAsync,
-    increaseAsync,
+    decreaseThunk,
+    increaseThunk,
   }
 )(MiddlewareCounterThunkContainerV)

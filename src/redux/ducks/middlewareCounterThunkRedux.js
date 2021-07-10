@@ -1,18 +1,18 @@
 import { createAction, handleActions } from 'redux-actions'
 
-const DECREASE = 'middlewareCounterAsync/DECREASE'
-const INCREASE = 'middlewareCounterAsync/INCREASE'
+const DECREASE = 'middlewareCounterThunk/DECREASE'
+const INCREASE = 'middlewareCounterThunk/INCREASE'
 
 export const decrease = createAction(DECREASE)
 export const increase = createAction(INCREASE)
 
-export const decreaseAsync = () => dispatch => {
+export const decreaseThunk = () => dispatch => {
   setTimeout(() => {
     dispatch(decrease())
   }, 1000)
 }
 
-export const increaseAsync = () => dispatch => {
+export const increaseThunk = () => dispatch => {
   setTimeout(() => {
     dispatch(increase())
   }, 1000)
