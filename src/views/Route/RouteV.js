@@ -11,6 +11,7 @@ import AsyncV from '../Async/AsyncV'
 import ContextV from '../Context/ContextV'
 import ReduxV from '../Redux/ReduxV'
 import MiddlewareV from '../Middleware/MiddlewareV'
+import SplitV from '../Split/SplitV'
 
 const RouteV = () => {
 
@@ -29,6 +30,7 @@ const RouteV = () => {
           <li> <Link to={path + '/optima'}>Optima</Link> </li>
           <li> <Link to={path + '/redux'}>Redux</Link> </li>
           <li> <Link to={path + '/route'}>Route</Link> </li>
+          <li> <Link to={path + '/split'}>Split</Link> </li>
           <li> <Link to={path + '/style'}>Style</Link> </li>
         </ul>
       </div>
@@ -42,6 +44,7 @@ const RouteV = () => {
         <Route path={path + '/optima'} component={OptimaV} />
         <Route path={path + '/redux'} component={ReduxV} />
         <Route path={path + '/route'} component={RouteRouteV} />
+        <Route path={path + '/split'} component={SplitV} />
         <Route path={path + '/style'} component={StyleV} />
       </div>
       <div style={{clear: 'both'}}> </div>
