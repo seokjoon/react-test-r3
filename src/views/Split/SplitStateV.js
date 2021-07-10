@@ -10,8 +10,11 @@ const SplitStateV = () => {
 
   return (
     <div>
-      <button onClick={handleClick}>setFoo</button>
-      <div>{ foo && foo }</div>
+      <h3>SplitStateV</h3>
+      <div>
+        <button onClick={handleClick}>setFoo</button>
+        <div>{ foo && foo }</div>
+      </div>
     </div>
   )
 }

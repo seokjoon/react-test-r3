@@ -12,12 +12,13 @@ const SplitLazyV = () => {
 
   return (
     <div>
-      <button onClick={onClick}>foo</button>
-
-      <Suspense fallback={<div>loading...</div>}>
-        {visible && <Foo />}
-      </Suspense>
-
+      <h3>SplitLazyV</h3>
+      <div>
+        <button onClick={onClick}>foo</button>
+        <Suspense fallback={<div>loading...</div>}>
+          {visible && <Foo />}
+        </Suspense>
+      </div>
     </div>
   )
 }
