@@ -1,5 +1,6 @@
 import { createAction, handleActions } from 'redux-actions'
-import { delay, put, takeEvery, takeLatest, } from 'redux-saga/effects'
+//import { delay, put, select, takeEvery, takeLatest, } from 'redux-saga/effects'
+import { delay, put, select, takeLatest, throttle, } from 'redux-saga/effects'
 
 const DECREASE = 'middlewareCounterSaga/DECREASE'
 const INCREASE = 'middlewareCounterSaga/INCREASE'
@@ -21,10 +22,12 @@ function* decreaseAsync() {
 function* increaseAsync() {
   yield delay(1000)
   yield put(increase())
+  console.log(yield select(state => state.middlewareCounterSagaRedux))
 }
 
 export function* middlewareCounterSaga() {
-  yield takeEvery(INCREASE_SAGA, increaseAsync)
+  //yield takeEvery(INCREASE_SAGA, increaseAsync)
+  yield throttle(1000, INCREASE_SAGA, increaseAsync)
   yield takeLatest(DECREASE_SAGA, decreaseAsync)
 }
 
