@@ -13,14 +13,14 @@ const ArticleV = () => {
       <h3>ArticleV</h3>
       <ul>
         <li><Link to={path + '/'}>ArticleList</Link></li>
-        <li><Link to={path + '/@foo'}>ArticleList by username</Link></li>
+        <li><Link to={path + '/user/foo'}>ArticleList by username</Link></li>
         <li><Link to={path + '/1'}>ArticleItem</Link></li>
         <li><Link to={path + '/set/1'}>ArticleItemSet</Link></li>
       </ul>
       <div>
         <Route path={[
           path + '/',
-          path + '/@:username',
+          path + '/user/:username',
         ]} component={ArticleListV} exact />
         <Route path={path + '/:id'} component={ArticleItemV} exact />
         <Route path={path + '/set/:id'} component={ArticleItemSetV} exact />
