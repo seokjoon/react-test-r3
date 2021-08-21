@@ -1,8 +1,19 @@
 import { createAction, handleActions } from 'redux-actions'
 import produce from 'immer'
+import r3Saga from '../../helpers/r3Saga'
+import r3Api from '../../helpers/r3Api'
+import { takeLatest } from 'redux-saga/effects'
 
 const CHANGE_FIELD = 'user/CHANGE_FIELD'
 const INIT_FORM = 'user/INIT_FORM'
+
+const CREATE = 'user/CREATE'
+const CREATE_FAIL = 'user/CREATE_FAIL'
+const CREATE_SUCCESS = 'user/CREATE_SUCCESS'
+
+const CREATE_TOKEN = 'user/CREATE_TOKEN'
+const CREATE_TOKEN_FAIL = 'user/CREATE_TOKEN_FAIL'
+const CREATE_TOKEN_SUCCESS = 'user/CREATE_TOKEN_SUCCESS'
 
 const initState = {
   create: {
@@ -14,6 +25,8 @@ const initState = {
     password: '',
     username: '',
   },
+  userRedux: null,
+  userReduxError: null,
 }
 
 const userRedux = handleActions({
@@ -22,9 +35,28 @@ const userRedux = handleActions({
       draft[form][key] = val //ex: state.create.username 을 변경
     })
   ),
+  [CREATE_FAIL]: (state, { payload: error }) => ({
+    ...state,
+    userReduxError: error,
+  }),
+  [CREATE_SUCCESS]: (state, { payload: userRedux }) => ({
+    ...state,
+    userRedux,
+    userReduxError: null,
+  }),
+  [CREATE_TOKEN_FAIL]: (state, { payload: error }) => ({
+    ...state,
+    userReduxError: error,
+  }),
+  [CREATE_TOKEN_SUCCESS]: (state, { payload: userRedux }) => ({
+    ...state,
+    userRedux,
+    userReduxError: null,
+  }),
   [INIT_FORM]: (state, { payload: form }) => ({
     ...state,
-    [form]: initState[form]
+    [form]: initState[form],
+    userReduxError: null, //폼 전환시 회원 인증 에러 초기화
   }),
 }, initState)
 
@@ -36,6 +68,25 @@ userRedux.changeField = createAction(
     val, //변경하려는 값
   })
 )
+
+userRedux.create = createAction(CREATE, ({ password, username }) => ({
+  password,
+  username,
+}))
+
+userRedux.createToken = createAction(CREATE_TOKEN, ({ password, username }) => ({
+  password,
+  username,
+}))
+
+userRedux.createSaga = r3Saga.createReq(CREATE, r3Api.user.create)
+
+userRedux.createTokenSaga = r3Saga.createReq(CREATE_TOKEN, r3Api.user.createToken)
+
+userRedux.userSaga = function* () {
+  yield takeLatest(CREATE, userRedux.createSaga)
+  yield takeLatest(CREATE_TOKEN, userRedux.createTokenSaga)
+}
 
 userRedux.initForm = createAction(INIT_FORM, form => form) //create, createToken
 
