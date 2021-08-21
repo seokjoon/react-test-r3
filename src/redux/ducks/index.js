@@ -8,6 +8,7 @@ import middlewareApiThunkRedux from './middlewareApiThunkRedux'
 import middlewareApiSagaRedux, { middlewareApiSaga } from './middlewareApiSagaRedux'
 import r3ApiLoadingRedux from './r3ApiLoadingRedux'
 import userCreateRedux from './userCreateRedux'
+import userRedux from './userRedux'
 import { all } from 'redux-saga/effects'
 
 const rootReducer = combineReducers({
@@ -19,14 +20,16 @@ const rootReducer = combineReducers({
   r3ApiLoadingRedux,
   reduxCounterRedux,
   reduxTodoRedux,
-  userCreateRedux: userCreateRedux,
+  userCreateRedux,
+  userRedux,
 })
 
 export function* rootSaga() {
   yield all([
     middlewareCounterSagaRedux.middlewareCounterSaga(),
     middlewareApiSaga(),
-    userCreateRedux.userSaga(),
+    userCreateRedux.userCreateSaga(),
+    userRedux.userSaga(),
   ])
 }
 

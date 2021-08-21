@@ -81,11 +81,11 @@ userCreateRedux.createSaga = r3Saga.createReq(CREATE, r3Api.user.create)
 
 userCreateRedux.createTokenSaga = r3Saga.createReq(CREATE_TOKEN, r3Api.user.createToken)
 
-userCreateRedux.userSaga = function* () {
+userCreateRedux.initForm = createAction(INIT_FORM, form => form) //create, createToken
+
+userCreateRedux.userCreateSaga = function* () {
   yield takeLatest(CREATE, userCreateRedux.createSaga)
   yield takeLatest(CREATE_TOKEN, userCreateRedux.createTokenSaga)
 }
-
-userCreateRedux.initForm = createAction(INIT_FORM, form => form) //create, createToken
 
 export default userCreateRedux

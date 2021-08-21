@@ -2,17 +2,20 @@ import React, { useEffect } from 'react'
 import UserCreateComV from './UserCreateComV'
 import { useDispatch, useSelector } from 'react-redux'
 import userCreateRedux from '../../redux/ducks/userCreateRedux'
+import userRedux from '../../redux/ducks/userRedux'
 
 const UserCreateContainerV = () => {
 
   const dispatch = useDispatch()
 
-  const { form, userCreate, userCreateError } = useSelector(({ userCreateRedux }) => ({
+  const { form, userCreate, userCreateError, user } = useSelector(({ userCreateRedux, userRedux }) => ({
     form: userCreateRedux.create,
     userCreate: userCreateRedux.userCreate,
     userCreateError: userCreateRedux.userCreateError,
+    user: userRedux.user,
   }))
 
+  //입력 변경 이벤트 핸들러
   const onChange = e => {
     const { name, value } = e.target
     dispatch(
@@ -24,6 +27,7 @@ const UserCreateContainerV = () => {
     )
   }
 
+  //폼 등록 이벤트 핸들러
   const onSubmit = e => {
     e.preventDefault()
     const { password, passwordConfirm, username, } = form
@@ -34,10 +38,12 @@ const UserCreateContainerV = () => {
     dispatch(userCreateRedux.create({ password, username, }))
   }
 
+  //컴포넌트 첫 렌더링시 form 초기화
   useEffect(() => {
     dispatch(userCreateRedux.initForm('create'))
   }, [dispatch])
 
+  //회원가입 성공/실패
   useEffect(() => {
     if(userCreateError) {
       console.log('userCreateError: ', userCreateError)
@@ -45,8 +51,16 @@ const UserCreateContainerV = () => {
     }
     if(userCreate) {
       console.log('user: ', userCreate)
+      dispatch(userRedux.check())
     }
-  }, [userCreate, userCreateError])
+  }, [userCreate, userCreateError, dispatch])
+
+  //user 값 설정 확인
+  useEffect(() => {
+    if(user) {
+      console.log('user: ', user)
+    }
+  }, [user])
 
   return (
     <UserCreateComV
