@@ -7,7 +7,15 @@ const r3Api = {
     getUsers: () => axios.get(`https://jsonplaceholder.typicode.com/users`),
   },
   user: {
-    foo: () => r3Client.get('/api/articles?username=foo2&tag=foo'),
+    checkToken: () => r3Client.get('/api/usersCheckToken'),
+    create: ({ password, username, }) => r3Client.post('/api/usersCreate', {
+      password,
+      username,
+    }),
+    createToken: ({ password, username, }) => r3Client.post('/api/usersCreateToken', {
+      password,
+      username,
+    }),
   },
 }
 
