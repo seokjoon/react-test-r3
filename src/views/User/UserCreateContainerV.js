@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react'
 import UserCreateComV from './UserCreateComV'
 import { useDispatch, useSelector } from 'react-redux'
-import userRedux from '../../redux/ducks/userRedux'
+import userCreateRedux from '../../redux/ducks/userCreateRedux'
 
 const UserCreateContainerV = () => {
 
   const dispatch = useDispatch()
 
-  const { form, user, userError } = useSelector(({ userRedux }) => ({
-    form: userRedux.create,
-    user: userRedux.user,
-    userError: userRedux.userError,
+  const { form, userCreate, userCreateError } = useSelector(({ userCreateRedux }) => ({
+    form: userCreateRedux.create,
+    userCreate: userCreateRedux.userCreate,
+    userCreateError: userCreateRedux.userCreateError,
   }))
 
   const onChange = e => {
     const { name, value } = e.target
     dispatch(
-      userRedux.changeField({
+      userCreateRedux.changeField({
         form: 'create',
         key: name,
         val: value
@@ -31,22 +31,22 @@ const UserCreateContainerV = () => {
       console.log('password mismatch')
       return 0
     }
-    dispatch(userRedux.create({ password, username, }))
+    dispatch(userCreateRedux.create({ password, username, }))
   }
 
   useEffect(() => {
-    dispatch(userRedux.initForm('create'))
+    dispatch(userCreateRedux.initForm('create'))
   }, [dispatch])
 
   useEffect(() => {
-    if(userError) {
-      console.log('userError: ', userError)
+    if(userCreateError) {
+      console.log('userCreateError: ', userCreateError)
       return 0
     }
-    if(user) {
-      console.log('user: ', user)
+    if(userCreate) {
+      console.log('user: ', userCreate)
     }
-  }, [user, userError])
+  }, [userCreate, userCreateError])
 
   return (
     <UserCreateComV

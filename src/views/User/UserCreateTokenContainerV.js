@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import userRedux from '../../redux/ducks/userRedux'
+import userCreateRedux from '../../redux/ducks/userCreateRedux'
 import UserCreateComV from './UserCreateComV'
 
 const UserCreateTokenContainerV = () => {
 
   const dispatch = useDispatch()
 
-  const { form } = useSelector(({ userRedux }) => ({
-    form: userRedux.createToken,
+  const { form } = useSelector(({ userCreateRedux }) => ({
+    form: userCreateRedux.createToken,
   }))
 
   const onChange = e => {
     const { name, value, } = e.target
     dispatch(
-      userRedux.changeField({
+      userCreateRedux.changeField({
         form: 'createToken',
         key: name,
         val: value,
@@ -27,7 +27,7 @@ const UserCreateTokenContainerV = () => {
   }
 
   useEffect(() => {
-    dispatch(userRedux.initForm('createToken'))
+    dispatch(userCreateRedux.initForm('createToken'))
   }, [dispatch])
 
   return (
