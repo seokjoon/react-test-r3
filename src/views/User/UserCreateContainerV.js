@@ -7,8 +7,10 @@ const UserCreateContainerV = () => {
 
   const dispatch = useDispatch()
 
-  const { form } = useSelector(({ userRedux }) => ({
+  const { form, user, userError } = useSelector(({ userRedux }) => ({
     form: userRedux.create,
+    user: userRedux.user,
+    userError: userRedux.userError,
   }))
 
   const onChange = e => {
@@ -24,11 +26,27 @@ const UserCreateContainerV = () => {
 
   const onSubmit = e => {
     e.preventDefault()
+    const { password, passwordConfirm, username, } = form
+    if(password !== passwordConfirm) {
+      console.log('password mismatch')
+      return 0
+    }
+    dispatch(userRedux.create({ password, username, }))
   }
 
   useEffect(() => {
     dispatch(userRedux.initForm('create'))
   }, [dispatch])
+
+  useEffect(() => {
+    if(userError) {
+      console.log('userError: ', userError)
+      return 0
+    }
+    if(user) {
+      console.log('user: ', user)
+    }
+  }, [user, userError])
 
   return (
     <UserCreateComV

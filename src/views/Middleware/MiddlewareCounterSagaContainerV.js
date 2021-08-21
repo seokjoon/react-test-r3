@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { decreaseSaga, increaseSaga } from '../../redux/ducks/middlewareCounterSagaRedux'
+import middlewareCounterSagaRedux from '../../redux/ducks/middlewareCounterSagaRedux'
 import MiddlewareCounterSagaV from './MiddlewareCounterSagaV'
 
 const MiddlewareCounterThunkContainerV = ({ decreaseSaga, increaseSaga, num, }) => {
@@ -14,7 +14,7 @@ export default connect(
     num: state.middlewareCounterSagaRedux,
   }),
   {
-    decreaseSaga,
-    increaseSaga,
+    decreaseSaga: middlewareCounterSagaRedux.decreaseSaga,
+    increaseSaga: middlewareCounterSagaRedux.increaseSaga,
   }
 )(MiddlewareCounterThunkContainerV)

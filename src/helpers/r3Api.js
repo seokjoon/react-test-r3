@@ -8,7 +8,7 @@ const r3Api = {
   },
   user: {
     checkToken: () => r3Client.get('/api/usersCheckToken'),
-    create: ({ password, username, }) => r3Client.post('/api/usersCreate', {
+    create: ({ password, username, }) => r3Client.post('/api/users', {
       password,
       username,
     }),

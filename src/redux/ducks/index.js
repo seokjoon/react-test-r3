@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import middlewareCounterRedux from './middlewareCounterRedux'
 import middlewareCounterThunkRedux from './middlewareCounterThunkRedux'
-import middlewareCounterSagaRedux, { middlewareCounterSaga } from './middlewareCounterSagaRedux'
+import middlewareCounterSagaRedux from './middlewareCounterSagaRedux'
 import reduxCounterRedux from './reduxCounterRedux'
 import reduxTodoRedux from './reduxTodoRedux'
 import middlewareApiThunkRedux from './middlewareApiThunkRedux'
@@ -23,7 +23,11 @@ const rootReducer = combineReducers({
 })
 
 export function* rootSaga() {
-  yield all([middlewareCounterSaga(), middlewareApiSaga(),])
+  yield all([
+    middlewareCounterSagaRedux.middlewareCounterSaga(),
+    middlewareApiSaga(),
+    userRedux.userSaga(),
+  ])
 }
 
 export default rootReducer

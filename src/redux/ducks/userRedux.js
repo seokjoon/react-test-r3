@@ -5,15 +5,13 @@ import r3Api from '../../helpers/r3Api'
 import { takeLatest } from 'redux-saga/effects'
 
 const CHANGE_FIELD = 'user/CHANGE_FIELD'
-const INIT_FORM = 'user/INIT_FORM'
-
 const CREATE = 'user/CREATE'
 const CREATE_FAIL = 'user/CREATE_FAIL'
 const CREATE_SUCCESS = 'user/CREATE_SUCCESS'
-
 const CREATE_TOKEN = 'user/CREATE_TOKEN'
 const CREATE_TOKEN_FAIL = 'user/CREATE_TOKEN_FAIL'
 const CREATE_TOKEN_SUCCESS = 'user/CREATE_TOKEN_SUCCESS'
+const INIT_FORM = 'user/INIT_FORM'
 
 const initState = {
   create: {
@@ -25,8 +23,8 @@ const initState = {
     password: '',
     username: '',
   },
-  userRedux: null,
-  userReduxError: null,
+  user: null,
+  userError: null,
 }
 
 const userRedux = handleActions({
@@ -37,26 +35,26 @@ const userRedux = handleActions({
   ),
   [CREATE_FAIL]: (state, { payload: error }) => ({
     ...state,
-    userReduxError: error,
+    userError: error,
   }),
-  [CREATE_SUCCESS]: (state, { payload: userRedux }) => ({
+  [CREATE_SUCCESS]: (state, { payload: user }) => ({
     ...state,
-    userRedux,
-    userReduxError: null,
+    user,
+    userError: null,
   }),
   [CREATE_TOKEN_FAIL]: (state, { payload: error }) => ({
     ...state,
-    userReduxError: error,
+    user: error,
   }),
-  [CREATE_TOKEN_SUCCESS]: (state, { payload: userRedux }) => ({
+  [CREATE_TOKEN_SUCCESS]: (state, { payload: user }) => ({
     ...state,
-    userRedux,
-    userReduxError: null,
+    user,
+    userError: null,
   }),
   [INIT_FORM]: (state, { payload: form }) => ({
     ...state,
     [form]: initState[form],
-    userReduxError: null, //폼 전환시 회원 인증 에러 초기화
+    userError: null, //폼 전환시 회원 인증 에러 초기화
   }),
 }, initState)
 

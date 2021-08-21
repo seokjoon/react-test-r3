@@ -11,7 +11,7 @@ const UserCreateComV = ({ form, type, onChange, onSubmit, }) => {
 
   const outCreateInput = (
     <input
-      autoComplete="password-new" name="passwordConfirm" placeholder="password confirm"
+      autoComplete="password-new" name="passwordConfirm" placeholder="password confirm" type="password"
       onChange={onChange}
       value={form.passwordConfirm}
     />
