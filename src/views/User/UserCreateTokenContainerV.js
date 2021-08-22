@@ -2,13 +2,18 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import userCreateRedux from '../../redux/ducks/userCreateRedux'
 import UserCreateComV from './UserCreateComV'
+import userRedux from '../../redux/ducks/userRedux'
+import { withRouter } from 'react-router-dom'
 
-const UserCreateTokenContainerV = () => {
+const UserCreateTokenContainerV = ({ history }) => {
 
   const dispatch = useDispatch()
 
-  const { form } = useSelector(({ userCreateRedux }) => ({
+  const { form, userCreate, userCreateError, user, } = useSelector(({ userCreateRedux, userRedux }) => ({
     form: userCreateRedux.createToken,
+    userCreate: userCreateRedux.userCreate,
+    userCreateError: userCreateRedux.userCreateError,
+    user: userRedux.user,
   }))
 
   const onChange = e => {
@@ -24,11 +29,30 @@ const UserCreateTokenContainerV = () => {
 
   const onSubmit = e => {
     e.preventDefault()
+    const { password, username, } = form
+    dispatch(userCreateRedux.createToken({ password, username, }))
   }
 
   useEffect(() => {
     dispatch(userCreateRedux.initForm('createToken'))
   }, [dispatch])
+
+  useEffect(() => {
+    if(userCreateError) {
+      console.log('userCreateError: ', userCreateError)
+      return 0
+    }
+    if(userCreate) {
+      console.log('userCreate: ', userCreate)
+      dispatch(userRedux.check())
+    }
+  }, [userCreate, userCreateError, dispatch])
+
+  useEffect(() => {
+    if(user) {
+      history.push('/')
+    }
+  }, [history, user])
 
   return (
     <UserCreateComV
@@ -40,4 +64,4 @@ const UserCreateTokenContainerV = () => {
   )
 }
 
-export default UserCreateTokenContainerV
+export default withRouter(UserCreateTokenContainerV)

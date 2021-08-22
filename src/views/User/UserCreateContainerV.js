@@ -3,8 +3,9 @@ import UserCreateComV from './UserCreateComV'
 import { useDispatch, useSelector } from 'react-redux'
 import userCreateRedux from '../../redux/ducks/userCreateRedux'
 import userRedux from '../../redux/ducks/userRedux'
+import { withRouter } from 'react-router-dom'
 
-const UserCreateContainerV = () => {
+const UserCreateContainerV = ({ history }) => {
 
   const dispatch = useDispatch()
 
@@ -59,8 +60,9 @@ const UserCreateContainerV = () => {
   useEffect(() => {
     if(user) {
       console.log('user: ', user)
+      history.push('/')
     }
-  }, [user])
+  }, [history, user])
 
   return (
     <UserCreateComV
@@ -72,4 +74,4 @@ const UserCreateContainerV = () => {
   )
 }
 
-export default UserCreateContainerV
+export default withRouter(UserCreateContainerV)
