@@ -2,51 +2,14 @@ import r3Api from '../../helpers/r3Api'
 import { handleActions } from 'redux-actions'
 import r3Thunk from '../../helpers/r3Thunk'
 
+
 const GET_POST = 'middlewareApiThunk/GET_POST'
 // const GET_POST_FAIL = 'middlewareApiThunk/GET_POST_FAIL'
 const GET_POST_SUCCESS = 'middlewareApiThunk/GET_POST_SUCCESS'
-
 const GET_USERS = 'middlewareApiThunk/GET_USERS'
 // const GET_USERS_FAIL = 'middlewareApiThunk/GET_USERS_FAIL'
 const GET_USERS_SUCCESS = 'middlewareApiThunk/GET_USERS_SUCCESS'
 
-/* export const getPost = id => async dispatch => {
-  dispatch({ type: GET_POST })
-  try {
-    const res = await r3Api.middleware.getPost(id)
-    dispatch({
-      payload: res.data,
-      type: GET_POST_SUCCESS,
-    })
-  } catch (e) {
-    dispatch({
-      type: GET_POST_FAIL,
-      payload: e,
-      error: true,
-    })
-    throw e
-  }
-} */
-export const getPost = r3Thunk.createReq(GET_POST, r3Api.middleware.getPost)
-
-/* export const getUsers = () => async dispatch => {
-  dispatch({ type: GET_USERS })
-  try {
-    const res = await r3Api.middleware.getUsers()
-    dispatch({
-      payload: res.data,
-      type: GET_USERS_SUCCESS,
-    })
-  } catch (e) {
-    dispatch({
-      error: true,
-      payload: e,
-      type: GET_USERS_FAIL,
-    })
-    throw  e
-  }
-} */
-export const getUsers = r3Thunk.createReq(GET_USERS, r3Api.middleware.getUsers)
 
 const initState = {
   // loading: {
@@ -104,5 +67,46 @@ const middlewareApiThunkRedux = handleActions({
     users: action.payload,
   }),
 }, initState)
+
+
+
+/* export const getPost = id => async dispatch => {
+  dispatch({ type: GET_POST })
+  try {
+    const res = await r3Api.middleware.getPost(id)
+    dispatch({
+      payload: res.data,
+      type: GET_POST_SUCCESS,
+    })
+  } catch (e) {
+    dispatch({
+      type: GET_POST_FAIL,
+      payload: e,
+      error: true,
+    })
+    throw e
+  }
+} */
+middlewareApiThunkRedux.getPost = r3Thunk.createReq(GET_POST, r3Api.middleware.getPost)
+
+/* export const getUsers = () => async dispatch => {
+  dispatch({ type: GET_USERS })
+  try {
+    const res = await r3Api.middleware.getUsers()
+    dispatch({
+      payload: res.data,
+      type: GET_USERS_SUCCESS,
+    })
+  } catch (e) {
+    dispatch({
+      error: true,
+      payload: e,
+      type: GET_USERS_FAIL,
+    })
+    throw  e
+  }
+} */
+middlewareApiThunkRedux.getUsers = r3Thunk.createReq(GET_USERS, r3Api.middleware.getUsers)
+
 
 export default middlewareApiThunkRedux

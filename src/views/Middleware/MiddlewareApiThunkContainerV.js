@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
-import { getPost, getUsers } from '../../redux/ducks/middlewareApiThunkRedux'
+import middlewareApiThunkRedux from '../../redux/ducks/middlewareApiThunkRedux'
 import { connect } from 'react-redux'
 import MiddlewareApiThunkV from './MiddlewareApiThunkV'
+
 
 const MiddlewareApiThunkContainerV = ({
   getPost,
@@ -26,6 +27,7 @@ const MiddlewareApiThunkContainerV = ({
   )
 }
 
+
 export default connect(
   ({ middlewareApiThunkRedux, r3ApiLoadingRedux }) => ({
     //loadingPost: middlewareApiThunkRedux.GET_POST,
@@ -36,7 +38,7 @@ export default connect(
     users: middlewareApiThunkRedux.users,
   }),
   {
-    getPost,
-    getUsers,
+    getPost: middlewareApiThunkRedux.getPost,
+    getUsers: middlewareApiThunkRedux.getUsers,
   }
 )(MiddlewareApiThunkContainerV)

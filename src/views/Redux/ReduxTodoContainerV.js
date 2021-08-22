@@ -1,7 +1,8 @@
 import React from 'react'
 import ReduxTodoListV from './ReduxTodoListV'
-import { changeInput, insert, remove, toggle, } from '../../redux/ducks/reduxTodoRedux'
+import reduxTodoRedux from '../../redux/ducks/reduxTodoRedux'
 import { connect } from 'react-redux'
+
 
 const ReduxTodoContainerV = ({
   changeInput,
@@ -23,6 +24,7 @@ const ReduxTodoContainerV = ({
   )
 }
 
+
 export default connect(
   // state => ({
   ({reduxTodoRedux}) => ({
@@ -30,9 +32,9 @@ export default connect(
     todos: reduxTodoRedux.todos,
   }),
   {
-    changeInput,
-    insert,
-    remove,
-    toggle,
+    changeInput: reduxTodoRedux.changeInput,
+    insert: reduxTodoRedux.insert,
+    remove: reduxTodoRedux.remove,
+    toggle: reduxTodoRedux.toggle,
   }
 )(ReduxTodoContainerV)

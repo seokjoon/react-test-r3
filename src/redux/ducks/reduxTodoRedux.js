@@ -1,43 +1,11 @@
 import { createAction, handleActions } from 'redux-actions'
 
+
 const CHANGE_INPUT = 'reduxTodoRedux/CHANGE_INPUT'
 const INSERT = 'reduxTodoRedux/INSERT'
 const REMOVE = 'reduxTodoRedux/REMOVE'
 const TOGGLE = 'reduxTodoRedux/TOGGLE'
 
-// export const changeInput = input => ({
-//   type: CHANGE_INPUT,
-//   input,
-// })
-export const changeInput = createAction(CHANGE_INPUT, input => input)
-
-let id = 2
-
-// export const insert = text => ({
-//   type: INSERT,
-//   todo: {
-//     id: id++,
-//     text,
-//     done: false,
-//   }
-// })
-export const insert = createAction(INSERT, text => ({
-  id: id++,
-  text,
-  done: false,
-}))
-
-// export const remove = id => ({
-//   type: REMOVE,
-//   id,
-// })
-export const remove = createAction(REMOVE, id => id)
-
-// export const toggle = id => ({
-//   type: TOGGLE,
-//   id,
-// })
-export const toggle = createAction(TOGGLE, id => id)
 
 const initState = {
   input: '',
@@ -94,5 +62,41 @@ const reduxTodoRedux = handleActions({
     todos: state.todos.map(todo => todo.id === id ? { ...todo, done: !todo.done } : todo)
   }),
 }, initState)
+
+
+// export const changeInput = input => ({
+//   type: CHANGE_INPUT,
+//   input,
+// })
+reduxTodoRedux.changeInput = createAction(CHANGE_INPUT, input => input)
+
+let id = 2
+
+// export const insert = text => ({
+//   type: INSERT,
+//   todo: {
+//     id: id++,
+//     text,
+//     done: false,
+//   }
+// })
+reduxTodoRedux.insert = createAction(INSERT, text => ({
+  id: id++,
+  text,
+  done: false,
+}))
+
+// export const remove = id => ({
+//   type: REMOVE,
+//   id,
+// })
+reduxTodoRedux.remove = createAction(REMOVE, id => id)
+
+// export const toggle = id => ({
+//   type: TOGGLE,
+//   id,
+// })
+reduxTodoRedux.toggle = createAction(TOGGLE, id => id)
+
 
 export default reduxTodoRedux

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { getPost, getUsers } from '../../redux/ducks/middlewareApiSagaRedux'
+import middlewareApiSagaRedux from '../../redux/ducks/middlewareApiSagaRedux'
 import { connect } from 'react-redux'
 import MiddlewareApiSagaV from './MiddlewareApiSagaV'
 
@@ -36,7 +36,7 @@ export default connect(
     users: middlewareApiSagaRedux.users,
   }),
   {
-    getPost,
-    getUsers,
+    getPost: middlewareApiSagaRedux.getPost,
+    getUsers: middlewareApiSagaRedux.getUsers,
   }
 )(MiddlewareApiSagaContainerV)

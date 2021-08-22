@@ -1,12 +1,9 @@
 import { createAction, handleActions } from 'redux-actions'
 
+
 const DECREASE = 'reduxCounterRedux/DECREASE'
 const INCREASE = 'reduxCounterRedux/INCREASE'
 
-// export const decrease = () => ({ type: DECREASE })
-// export const increase = () => ({ type: INCREASE })
-export const decrease = createAction(DECREASE)
-export const increase = createAction(INCREASE)
 
 const initState = {
   num: 0,
@@ -33,5 +30,12 @@ const reduxCounterRedux = handleActions(
   },
   initState,
 )
+
+
+// export const decrease = () => ({ type: DECREASE })
+// export const increase = () => ({ type: INCREASE })
+reduxCounterRedux.decrease = createAction(DECREASE)
+reduxCounterRedux.increase = createAction(INCREASE)
+
 
 export default reduxCounterRedux

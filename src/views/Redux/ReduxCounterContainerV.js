@@ -1,8 +1,9 @@
 import React from 'react'
 import ReduxCounterComV from './ReduxCounterComV'
 import { connect } from 'react-redux'
-import { decrease, increase } from '../../redux/ducks/reduxCounterRedux'
+import reduxCounterRedux from '../../redux/ducks/reduxCounterRedux'
 // import { bindActionCreators } from 'redux'
+
 
 // const mapDispatchToProps = dispatch => ({
 //   decrease: () => dispatch(decrease()),
@@ -27,13 +28,14 @@ const ReduxCounterContainerV = ({ num, decrease, increase }) => {
   )
 }
 
+
 //export default connect(mapStateToProps, mapDispatchToProps)(ReduxCounterContainerV)
 export default connect(
   state => ({
     num: state.reduxCounterRedux.num,
   }),
   {
-    decrease,
-    increase,
+    decrease: reduxCounterRedux.decrease,
+    increase: reduxCounterRedux.increase,
   },
 )(ReduxCounterContainerV)

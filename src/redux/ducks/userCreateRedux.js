@@ -4,6 +4,7 @@ import r3Saga from '../../helpers/r3Saga'
 import r3Api from '../../helpers/r3Api'
 import { takeLatest } from 'redux-saga/effects'
 
+
 const CHANGE_FIELD = 'userCreate/CHANGE_FIELD'
 const CREATE = 'userCreate/CREATE'
 const CREATE_FAIL = 'userCreate/CREATE_FAIL'
@@ -12,6 +13,7 @@ const CREATE_TOKEN = 'userCreate/CREATE_TOKEN'
 const CREATE_TOKEN_FAIL = 'userCreate/CREATE_TOKEN_FAIL'
 const CREATE_TOKEN_SUCCESS = 'userCreate/CREATE_TOKEN_SUCCESS'
 const INIT_FORM = 'userCreate/INIT_FORM'
+
 
 const initState = {
   create: {
@@ -58,6 +60,7 @@ const userCreateRedux = handleActions({
   }),
 }, initState)
 
+
 userCreateRedux.changeField = createAction(
   CHANGE_FIELD,
   ({ form, key, val }) => ({
@@ -87,5 +90,6 @@ userCreateRedux.userCreateSaga = function* () {
   yield takeLatest(CREATE, userCreateRedux.createSaga)
   yield takeLatest(CREATE_TOKEN, userCreateRedux.createTokenSaga)
 }
+
 
 export default userCreateRedux
