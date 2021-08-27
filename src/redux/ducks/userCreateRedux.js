@@ -46,7 +46,7 @@ const userCreateRedux = handleActions({
   }),
   [CREATE_TOKEN_FAIL]: (state, { payload: error }) => ({
     ...state,
-    user: error,
+    userCreateError: error,
   }),
   [CREATE_TOKEN_SUCCESS]: (state, { payload: userCreate }) => ({
     ...state,

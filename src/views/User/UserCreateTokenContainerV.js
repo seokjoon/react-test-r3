@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import userCreateRedux from '../../redux/ducks/userCreateRedux'
 import UserCreateComV from './UserCreateComV'
@@ -6,6 +6,8 @@ import userRedux from '../../redux/ducks/userRedux'
 import { withRouter } from 'react-router-dom'
 
 const UserCreateTokenContainerV = ({ history }) => {
+
+  const [err, setErr] = useState(null)
 
   const dispatch = useDispatch()
 
@@ -40,6 +42,7 @@ const UserCreateTokenContainerV = ({ history }) => {
   useEffect(() => {
     if(userCreateError) {
       console.log('userCreateError: ', userCreateError)
+      setErr('createToken failed')
       return 0
     }
     if(userCreate) {
@@ -56,10 +59,11 @@ const UserCreateTokenContainerV = ({ history }) => {
 
   return (
     <UserCreateComV
-      type="createToken"
+      err={err}
       form={form}
       onChange={onChange}
       onSubmit={onSubmit}
+      type="createToken"
     />
   )
 }

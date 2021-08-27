@@ -1,11 +1,22 @@
 import React, { Fragment } from 'react'
+import styled from 'styled-components'
 
 const textMap = {
   create: '사용자 등록',
   createToken: '로그인',
 }
 
-const UserCreateComV = ({ form, type, onChange, onSubmit, }) => {
+const MsgErr = styled.div`
+    color: red;
+`
+
+const UserCreateComV = ({
+  err,
+  form,
+  onChange,
+  onSubmit,
+  type,
+}) => {
 
   const text = textMap[type]
 
@@ -30,14 +41,17 @@ const UserCreateComV = ({ form, type, onChange, onSubmit, }) => {
     />
   </Fragment>)
 
+  const outErr = (err && <MsgErr>{err}</MsgErr>)
+
   const outs = (
     <div>
-      <h3>UserCreateComV: { text }</h3>
+      <h3>UserCreateComV: {text}</h3>
       <div>
         <form onSubmit={onSubmit}>
-          { outCreateTokenInput }
-          { (type === 'create') && outCreateInput }
-          <button>{ text }</button>
+          {outCreateTokenInput}
+          {(type === 'create') && outCreateInput}
+          {outErr}
+          <button>{text}</button>
         </form>
       </div>
     </div>
