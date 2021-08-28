@@ -68,6 +68,11 @@ const UserCreateContainerV = ({ history }) => {
     if(user) {
       console.log('user: ', user)
       history.push(r3Const.pathPublic + '/user')
+      try {
+        localStorage.setItem('user', JSON.stringify(user))
+      } catch (e) {
+        console.log('localStorage is not working')
+      }
     }
   }, [history, user])
 

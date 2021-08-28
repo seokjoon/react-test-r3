@@ -49,6 +49,11 @@ const UserCreateTokenContainerV = ({ history }) => {
   useEffect(() => {
     if(user) {
       history.push(r3Const.pathPublic + '/user')
+      try {
+        localStorage.setItem('user', JSON.stringify(user))
+      } catch (e) {
+        console.log('localStorage is not working')
+      }
     }
   }, [history, user])
 

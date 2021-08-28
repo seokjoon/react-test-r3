@@ -13,9 +13,12 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 //import middlewareCounterMiddleware from './middleware/middlewareCounterMiddleware'
 import ReduxThunk from 'redux-thunk'
 import createMiddlewareSaga from 'redux-saga'
+import userRedux from './redux/ducks/userRedux'
+
 
 //const store = createStore(rootReducer)
 const middlewareSaga = createMiddlewareSaga()
+
 const store = createStore(
   rootReducer,
   composeWithDevTools(
@@ -27,7 +30,21 @@ const store = createStore(
     ),
   ),
 )
+
+function setUser() {
+  try {
+    const user = localStorage.getItem('user')
+    if(!(user)) return 0
+    store.dispatch(userRedux.createTokenTmp(user))
+    store.dispatch(userRedux.check())
+  } catch (e) {
+    console.log('localStorage is not working')
+  }
+}
+setUser()
+
 middlewareSaga.run(rootSaga)
+
 
 ReactDOM.render(
   // <React.StrictMode>
@@ -40,6 +57,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
