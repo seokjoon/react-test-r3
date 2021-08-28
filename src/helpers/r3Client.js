@@ -1,11 +1,12 @@
 import axios from 'axios'
 
 
-const { REACT_APP_HOST_API_KOA, REACT_APP_PATH } = process.env
+//const { REACT_APP_HOST_API_KOA, REACT_APP_PATH } = process.env
 
 
 const r3Client = axios.create()
-r3Client.defaults.baseURL = REACT_APP_HOST_API_KOA + REACT_APP_PATH
+//r3Client.defaults.baseURL = REACT_APP_HOST_API_KOA + REACT_APP_PATH
+r3Client.defaults.baseURL = process.env.REACT_APP_HOST_API_KOA
 r3Client.defaults.headers.common['Authorization'] = 'Bearer foo'
 r3Client.defaults.withCredentials = true
 

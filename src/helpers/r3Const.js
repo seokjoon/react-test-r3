@@ -1,5 +1,5 @@
 const r3Const = {
-  pathPublic: '/react-test-r3',
+  pathPublic: process.env.REACT_APP_PATH,
 }
 
 export default r3Const

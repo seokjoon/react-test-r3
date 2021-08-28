@@ -4,6 +4,7 @@ import userCreateRedux from '../../redux/ducks/userCreateRedux'
 import UserCreateComV from './UserCreateComV'
 import userRedux from '../../redux/ducks/userRedux'
 import { withRouter } from 'react-router-dom'
+import r3Const from '../../helpers/r3Const'
 
 const UserCreateTokenContainerV = ({ history }) => {
 
@@ -47,7 +48,7 @@ const UserCreateTokenContainerV = ({ history }) => {
 
   useEffect(() => {
     if(user) {
-      history.push('/')
+      history.push(r3Const.pathPublic + '/user')
     }
   }, [history, user])
 

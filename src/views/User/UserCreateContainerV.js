@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import userCreateRedux from '../../redux/ducks/userCreateRedux'
 import userRedux from '../../redux/ducks/userRedux'
 import { withRouter } from 'react-router-dom'
+import r3Const from '../../helpers/r3Const'
 
 const UserCreateContainerV = ({ history }) => {
 
@@ -66,7 +67,7 @@ const UserCreateContainerV = ({ history }) => {
   useEffect(() => {
     if(user) {
       console.log('user: ', user)
-      history.push('/')
+      history.push(r3Const.pathPublic + '/user')
     }
   }, [history, user])
 
