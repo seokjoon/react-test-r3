@@ -21,13 +21,7 @@ const UserCreateContainerV = ({ history }) => {
   //입력 변경 이벤트 핸들러
   const onChange = e => {
     const { name, value } = e.target
-    dispatch(
-      userCreateRedux.changeField({
-        form: 'create',
-        key: name,
-        val: value
-      })
-    )
+    dispatch(userCreateRedux.changeField({ form: 'create', key: name, val: value }))
   }
 
   //폼 등록 이벤트 핸들러
@@ -40,8 +34,8 @@ const UserCreateContainerV = ({ history }) => {
     }
     if(password !== passwordConfirm) {
       setErr('password mismatch')
-      userCreateRedux.changeField({ form: 'create', key: 'password', value: '', })
-      userCreateRedux.changeField({ form: 'create', key: 'passwordConfirm', value: '', })
+      dispatch(userCreateRedux.changeField({ form: 'create', key: 'password', val: '', }))
+      dispatch(userCreateRedux.changeField({ form: 'create', key: 'passwordConfirm', val: '', }))
       return 0
     }
     dispatch(userCreateRedux.create({ password, username, }))

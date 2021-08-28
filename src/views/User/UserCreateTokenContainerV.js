@@ -20,13 +20,7 @@ const UserCreateTokenContainerV = ({ history }) => {
 
   const onChange = e => {
     const { name, value, } = e.target
-    dispatch(
-      userCreateRedux.changeField({
-        form: 'createToken',
-        key: name,
-        val: value,
-      })
-    )
+    dispatch(userCreateRedux.changeField({ form: 'createToken', key: name, val: value, }))
   }
 
   const onSubmit = e => {
