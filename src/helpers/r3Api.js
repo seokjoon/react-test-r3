@@ -18,6 +18,7 @@ const r3Api = {
       password,
       username,
     }),
+    destroyToken: () => r3Client.post('/api/usersDestroyToken')
   },
 }
 

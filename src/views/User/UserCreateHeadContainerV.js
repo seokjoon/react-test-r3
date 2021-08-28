@@ -1,17 +1,23 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import StyleUserCreateButton from '../Style/StyleUserCreateButton'
 import r3Const from '../../helpers/r3Const'
+import userRedux from '../../redux/ducks/userRedux'
 
 const UserCreateHeadContainerV = () => {
 
   const { user } = useSelector(({ userRedux }) => ({
-    user: userRedux.user
+    user: userRedux.user,
   }))
+
+  const dispatch = useDispatch()
+  const destroyToken = () => {
+    dispatch(userRedux.destroyToken())
+  }
 
   const outUser = (
     <div>
       <div>{ user && user.name }</div>
-      <StyleUserCreateButton to={r3Const.pathPublic + '/user/destroyToken'}>userDestroyToken</StyleUserCreateButton>
+      <StyleUserCreateButton onClick={destroyToken}>userDestroyToken</StyleUserCreateButton>
     </div>
   )
 

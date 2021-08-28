@@ -41,9 +41,9 @@ function setUser() {
     console.log('localStorage is not working')
   }
 }
-setUser()
 
 middlewareSaga.run(rootSaga)
+setUser()
 
 
 ReactDOM.render(
