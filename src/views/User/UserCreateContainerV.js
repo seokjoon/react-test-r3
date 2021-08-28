@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import UserCreateComV from './UserCreateComV'
 import { useDispatch, useSelector } from 'react-redux'
 import userCreateRedux from '../../redux/ducks/userCreateRedux'
@@ -6,6 +6,8 @@ import userRedux from '../../redux/ducks/userRedux'
 import { withRouter } from 'react-router-dom'
 
 const UserCreateContainerV = ({ history }) => {
+
+  const [err, setErr] = useState(null)
 
   const dispatch = useDispatch()
 
@@ -32,8 +34,14 @@ const UserCreateContainerV = ({ history }) => {
   const onSubmit = e => {
     e.preventDefault()
     const { password, passwordConfirm, username, } = form
+    if([password, passwordConfirm, username,].includes('')) {
+      setErr('not allowed empty value')
+      return 0
+    }
     if(password !== passwordConfirm) {
-      console.log('password mismatch')
+      setErr('password mismatch')
+      userCreateRedux.changeField({ form: 'create', key: 'password', value: '', })
+      userCreateRedux.changeField({ form: 'create', key: 'passwordConfirm', value: '', })
       return 0
     }
     dispatch(userCreateRedux.create({ password, username, }))
@@ -47,7 +55,11 @@ const UserCreateContainerV = ({ history }) => {
   //회원가입 성공/실패
   useEffect(() => {
     if(userCreateError) {
-      console.log('userCreateError: ', userCreateError)
+      if(userCreateError.response.status === 409) {
+        setErr('userCreateError: user exist ' + userCreateError)
+        return 0
+      }
+      setErr('userCreateError: ' + userCreateError)
       return 0
     }
     if(userCreate) {
@@ -66,10 +78,11 @@ const UserCreateContainerV = ({ history }) => {
 
   return (
     <UserCreateComV
-      type="create"
+      err={err}
       form={form}
       onChange={onChange}
       onSubmit={onSubmit}
+      type="create"
     />
   )
 }
