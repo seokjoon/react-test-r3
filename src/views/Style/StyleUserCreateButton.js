@@ -46,11 +46,9 @@ const StyledLink = styled(Link)`
 `;
 
 const StyleUserCreateButton = props => {
-  return props.to ? (
-    <StyledLink {...props} cyan={props.cyan ? 1 : 0} />
-  ) : (
+  return props.to ?
+    <StyledLink {...props} cyan={props.cyan ? 1 : 0} /> :
     <StyledButton {...props} />
-  );
-};
+}
 
 export default StyleUserCreateButton
