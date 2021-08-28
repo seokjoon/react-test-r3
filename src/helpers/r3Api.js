@@ -3,6 +3,14 @@ import r3Client from './r3Client'
 
 const r3Api = {
 
+  article: {
+    // createItem: ({  }) => r3Client.post('/api/articles', { }),
+    // deleteItem: ({ id }) => r3Client.delete('/api/articles/' + id),
+    // readItem: ({ id }) => r3Client.get('/api/articles/' + id),
+    // readItems: ({ }) => r3Client.get('/api/articles', { }),
+    // updateItem: ({ id }) => r3Client.put('/api/articles/' + id),
+  },
+
   middleware: {
     getPost: id => axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`),
     getUsers: () => axios.get(`https://jsonplaceholder.typicode.com/users`),
