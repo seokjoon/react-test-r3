@@ -11,8 +11,24 @@ const EditorBlock = styled(StyleResponsive)`
   padding-bottom: 5rem;
 `
 
-const TitleInput = styled.div`
-  font-size: 3rem;
+const QuilWrapper = styled.div`
+  .ql-editor {
+    padding: 0;
+    min-height: 100px;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    
+    color: #222222;
+    background: #d8d8d8;
+  }
+
+  .ql-editor.ql-blank::before {
+    left: 0;
+  }
+`
+
+const TitleInput = styled.input`
+  font-size: 1.5rem;
   outline: none;
   padding-bottom: 0.5rem;
   border: none;
@@ -21,21 +37,6 @@ const TitleInput = styled.div`
   width: 100%;
   
   background: #d8d8d8;
-`
-
-const QuilWrapper = styled.div`
-  .ql-editor {
-    padding: 0;
-    min-height: 320px;
-    font-size: 1.125rem;
-    line-height: 1.5;
-    
-    background: #d8d8d8;
-  }
-
-  .ql-editor.ql-blank::before {
-    left: 0;
-  }
 `
 
 const ArticleEditorV = () => {

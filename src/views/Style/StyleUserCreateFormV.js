@@ -12,7 +12,7 @@ const StyleUserCreateFormBlock = styled.div`
 `
 
 // 스타일링된 input
-const StyledInput = styled.div`
+const StyledInput = styled.input`
     font-size: 1rem;
     border: none;
     border-bottom: 1px solid ${palette.gray[5]};

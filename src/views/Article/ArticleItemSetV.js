@@ -1,13 +1,17 @@
 import React from 'react'
+import ArticleEditorV from './ArticleEditorV'
+import ArticleTagV from './ArticleTagV'
+import StyleResponsive from '../Style/StyleResponsive'
 
 const ArticleItemSetV = () => {
   return (
-    <div>
+    <StyleResponsive>
       <h3>ArticleItemSetV</h3>
       <div>
-
+        <ArticleEditorV />
+        <ArticleTagV />
       </div>
-    </div>
+    </StyleResponsive>
   )
 }
 
