@@ -7,7 +7,7 @@ const r3Api = {
     // createItem: ({  }) => r3Client.post('/api/articles', { }),
     // deleteItem: ({ id }) => r3Client.delete('/api/articles/' + id),
     // readItem: ({ id }) => r3Client.get('/api/articles/' + id),
-    // readItems: ({ }) => r3Client.get('/api/articles', { }),
+    readItems: ({...rest}) => r3Client.get('/api/articles', { params: rest }), //rest: limit, page, tag, username
     // updateItem: ({ id }) => r3Client.put('/api/articles/' + id),
   },
 
