@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import articleCreateRedux from './article/articleCreateRedux'
 import middlewareCounterRedux from './middleware/middlewareCounterRedux'
 import middlewareCounterThunkRedux from './middleware/middlewareCounterThunkRedux'
 import middlewareCounterSagaRedux from './middleware/middlewareCounterSagaRedux'
@@ -12,6 +13,7 @@ import userRedux from './user/userRedux'
 import { all } from 'redux-saga/effects'
 
 const rootReducer = combineReducers({
+  articleCreateRedux,
   middlewareApiSagaRedux,
   middlewareApiThunkRedux,
   middlewareCounterRedux,

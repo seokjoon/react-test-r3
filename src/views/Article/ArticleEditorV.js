@@ -6,6 +6,7 @@ import palette from '../Style/StyleUserCreatePalette'
 import Quill from 'quill'
 import 'quill/dist/quill.bubble.css'
 
+
 const EditorBlock = styled(StyleResponsive)`
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -39,9 +40,13 @@ const TitleInput = styled.input`
   background: #d8d8d8;
 `
 
-const ArticleEditorV = () => {
+const ArticleEditorV = ({ body, onChangeField, title }) => {
   const quillElement = useRef(null)
   const quillInstance = useRef(null)
+
+  const onChangeTitle = e => {
+    onChangeField({ key: 'title', val: e.target.value })
+  }
 
   useEffect(() => {
     quillInstance.current = new Quill(quillElement.current, {
@@ -56,11 +61,22 @@ const ArticleEditorV = () => {
         ],
       },
     })
-  }, [])
+
+    //quill에 text-change 이벤트 핸들러 등록
+    //https://quilljs.com/docs/quickstart/
+    const quill = quillInstance.current
+    quill.on('text-change', (delta, oldDelta, source) => {
+      if(source === 'user') onChangeField({ key: 'body', val: quill.root.innerHTML })
+    })
+  }, [onChangeField])
 
   return (
     <EditorBlock>
-      <TitleInput placeholder="제목을 입력하세요."/>
+      <TitleInput
+        onChange={onChangeTitle}
+        placeholder="제목을 입력하세요."
+        value={title}
+      />
       <QuilWrapper>
         <div ref={quillElement}/>
       </QuilWrapper>
