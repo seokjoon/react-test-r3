@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import UserCreateComV from './UserCreateComV'
 import { useDispatch, useSelector } from 'react-redux'
-import userCreateRedux from '../../redux/ducks/userCreateRedux'
-import userRedux from '../../redux/ducks/userRedux'
+import userCreateRedux from '../../redux/ducks/user/userCreateRedux'
+import userRedux from '../../redux/ducks/user/userRedux'
 import { withRouter } from 'react-router-dom'
 import r3Const from '../../helpers/r3Const'
 

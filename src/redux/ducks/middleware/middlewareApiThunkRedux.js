@@ -1,6 +1,6 @@
-import r3Api from '../../helpers/r3Api'
+import r3Api from '../../../helpers/r3Api'
 import { handleActions } from 'redux-actions'
-import r3Thunk from '../../helpers/r3Thunk'
+import r3Thunk from '../../../helpers/r3Thunk'
 
 
 const GET_POST = 'middlewareApiThunk/GET_POST'

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import middlewareApiSagaRedux from '../../redux/ducks/middlewareApiSagaRedux'
+import middlewareApiSagaRedux from '../../redux/ducks/middleware/middlewareApiSagaRedux'
 import { connect } from 'react-redux'
 import MiddlewareApiSagaV from './MiddlewareApiSagaV'
 

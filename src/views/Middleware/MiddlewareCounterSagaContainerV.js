@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import middlewareCounterSagaRedux from '../../redux/ducks/middlewareCounterSagaRedux'
+import middlewareCounterSagaRedux from '../../redux/ducks/middleware/middlewareCounterSagaRedux'
 import MiddlewareCounterSagaV from './MiddlewareCounterSagaV'
 
 const MiddlewareCounterThunkContainerV = ({ decreaseSaga, increaseSaga, num, }) => {

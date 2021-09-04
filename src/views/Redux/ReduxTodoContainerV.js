@@ -1,6 +1,6 @@
 import React from 'react'
 import ReduxTodoListV from './ReduxTodoListV'
-import reduxTodoRedux from '../../redux/ducks/reduxTodoRedux'
+import reduxTodoRedux from '../../redux/ducks/redux/reduxTodoRedux'
 import { connect } from 'react-redux'
 
 

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import StyleUserCreateButton from '../Style/StyleUserCreateButton'
 import r3Const from '../../helpers/r3Const'
-import userRedux from '../../redux/ducks/userRedux'
+import userRedux from '../../redux/ducks/user/userRedux'
 
 const UserCreateHeadContainerV = () => {
 

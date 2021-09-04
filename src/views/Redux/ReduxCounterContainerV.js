@@ -1,7 +1,7 @@
 import React from 'react'
 import ReduxCounterComV from './ReduxCounterComV'
 import { connect } from 'react-redux'
-import reduxCounterRedux from '../../redux/ducks/reduxCounterRedux'
+import reduxCounterRedux from '../../redux/ducks/redux/reduxCounterRedux'
 // import { bindActionCreators } from 'redux'
 
 

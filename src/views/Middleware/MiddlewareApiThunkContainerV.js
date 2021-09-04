@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import middlewareApiThunkRedux from '../../redux/ducks/middlewareApiThunkRedux'
+import middlewareApiThunkRedux from '../../redux/ducks/middleware/middlewareApiThunkRedux'
 import { connect } from 'react-redux'
 import MiddlewareApiThunkV from './MiddlewareApiThunkV'
 

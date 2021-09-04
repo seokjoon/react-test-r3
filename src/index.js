@@ -13,7 +13,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 //import middlewareCounterMiddleware from './middleware/middlewareCounterMiddleware'
 import ReduxThunk from 'redux-thunk'
 import createMiddlewareSaga from 'redux-saga'
-import userRedux from './redux/ducks/userRedux'
+import userRedux from './redux/ducks/user/userRedux'
 
 
 //const store = createStore(rootReducer)

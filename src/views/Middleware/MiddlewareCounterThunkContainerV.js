@@ -1,7 +1,7 @@
 import React from 'react'
 import MiddlewareCounterThunkV from './MiddlewareCounterThunkV'
 import { connect } from 'react-redux'
-import middlewareCounterThunkRedux from '../../redux/ducks/middlewareCounterThunkRedux'
+import middlewareCounterThunkRedux from '../../redux/ducks/middleware/middlewareCounterThunkRedux'
 
 
 const MiddlewareCounterThunkContainerV = ({ decreaseThunk, increaseThunk, num, }) => {
