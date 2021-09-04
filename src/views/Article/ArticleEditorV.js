@@ -40,7 +40,7 @@ const TitleInput = styled.input`
   background: #d8d8d8;
 `
 
-const ArticleEditorV = ({ body, onChangeField, title }) => {
+const ArticleEditorV = ({ content, onChangeField, title }) => {
   const quillElement = useRef(null)
   const quillInstance = useRef(null)
 
@@ -66,7 +66,7 @@ const ArticleEditorV = ({ body, onChangeField, title }) => {
     //https://quilljs.com/docs/quickstart/
     const quill = quillInstance.current
     quill.on('text-change', (delta, oldDelta, source) => {
-      if(source === 'user') onChangeField({ key: 'body', val: quill.root.innerHTML })
+      if(source === 'user') onChangeField({ key: 'content', val: quill.root.innerHTML })
     })
   }, [onChangeField])
 

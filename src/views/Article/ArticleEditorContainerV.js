@@ -7,8 +7,8 @@ import ArticleEditorV from './ArticleEditorV'
 const ArticleEditorContainerV = () => {
   const dispatch = useDispatch()
 
-  const { body, title, } = useSelector(({ articleCreateRedux }) => ({
-    body: articleCreateRedux.body,
+  const { content, title, } = useSelector(({ articleCreateRedux }) => ({
+    content: articleCreateRedux.content,
     title: articleCreateRedux.title,
   }))
 
@@ -22,7 +22,7 @@ const ArticleEditorContainerV = () => {
 
   return (
     <ArticleEditorV
-      body={body}
+      content={content}
       onChangeField={onChangeField}
       title={title}
     />

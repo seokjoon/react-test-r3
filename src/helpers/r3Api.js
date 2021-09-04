@@ -4,10 +4,10 @@ import r3Client from './r3Client'
 const r3Api = {
 
   article: {
-    // createItem: ({  }) => r3Client.post('/api/articles', { }),
+    createItem: ({ ...rest }) => r3Client.post('/api/articles', { ...rest }),
     // deleteItem: ({ id }) => r3Client.delete('/api/articles/' + id),
     // readItem: ({ id }) => r3Client.get('/api/articles/' + id),
-    readItems: ({...rest}) => r3Client.get('/api/articles', { params: rest }), //rest: limit, page, tag, username
+    readItems: ({...rest}) => r3Client.get('/api/articles', { params: { ...rest } }), //rest: limit, page, tag, username
     // updateItem: ({ id }) => r3Client.put('/api/articles/' + id),
   },
 

@@ -28,6 +28,7 @@ const rootReducer = combineReducers({
 
 export function* rootSaga() {
   yield all([
+    articleCreateRedux.createSaga(),
     middlewareCounterSagaRedux.middlewareCounterSaga(),
     middlewareApiSagaRedux.middlewareApiSaga(),
     userCreateRedux.userCreateSaga(),

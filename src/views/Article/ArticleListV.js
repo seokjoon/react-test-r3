@@ -14,7 +14,7 @@ const ArticleListV = ({ match }) => {
     const { username } = match.params; //console.log(match, username)
     readItems({
       limit: 5,
-      username: username,
+      username,
     }).then()
   }, [match])
 
