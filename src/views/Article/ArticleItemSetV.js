@@ -1,8 +1,8 @@
 import React from 'react'
-import ArticleTagV from './ArticleTagV'
 import StyleResponsive from '../Style/StyleResponsive'
 import ArticleBtnV from './ArticleBtnV'
 import ArticleEditorContainerV from './ArticleEditorContainerV'
+import ArticleTagContainerV from './ArticleTagContainerV'
 
 const ArticleItemSetV = () => {
   return (
@@ -11,7 +11,7 @@ const ArticleItemSetV = () => {
       <div>
         <ArticleEditorContainerV />
         <ArticleBtnV />
-        <ArticleTagV />
+        <ArticleTagContainerV />
       </div>
     </StyleResponsive>
   )

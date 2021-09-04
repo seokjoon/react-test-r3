@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 
@@ -26,7 +26,7 @@ const TagList = React.memo(({ onDelete, tags }) => (
 ))
 
 
-const ArticleTagV = () => {
+const ArticleTagV = ({ onChangeTags, tags }) => {
 
   const [input, setInput] = useState('')
   const [tagsLocal, setTagsLocal] = useState([])
@@ -34,22 +34,33 @@ const ArticleTagV = () => {
   const addTag = useCallback(tag => {
     if(!(tag)) return 0
     if(tagsLocal.includes(tag)) return 0
-    setTagsLocal([...tagsLocal, tag])
-  }, [tagsLocal])
+    // setTagsLocal([...tagsLocal, tag])
+    const tagsNext = [...tagsLocal, tag]
+    setTagsLocal(tagsNext)
+    onChangeTags(tagsNext)
+  }, [onChangeTags, tagsLocal])
 
   const onChange = useCallback(e => {
     setInput(e.target.value)
   }, [])
 
   const onDelete = useCallback(tag => {
-    setTagsLocal(tagsLocal.filter(t => t !== tag))
-  }, [tagsLocal])
+    // setTagsLocal(tagsLocal.filter(t => t !== tag))
+    const tagsNext = tagsLocal.filter(t => t !== tag)
+    setTagsLocal(tagsNext)
+    onChangeTags(tagsNext)
+  }, [onChangeTags, tagsLocal])
 
   const onSubmit = useCallback(e => {
     e.preventDefault()
     addTag(input.trim())
     setInput('')
   }, [input, addTag])
+
+  //tags 깂이 바뀔때
+  useEffect(() => {
+    setTagsLocal(tags)
+  }, [tags])
 
   return (
     <TagBlock>
