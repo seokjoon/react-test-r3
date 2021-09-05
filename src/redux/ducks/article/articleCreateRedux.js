@@ -11,7 +11,7 @@ const CREATE_FAIL = 'articleCreate/CREATE_FAIL'
 const CREATE_SUCCESS = 'articleCreate/CREATE_SUCCESS'
 
 
-const initState = {
+const stateInit = {
   content: '',
   create: null,
   createErr: null,
@@ -20,7 +20,7 @@ const initState = {
 }
 
 const articleCreateRedux = handleActions({
-  [INIT]: state => initState,
+  [INIT]: state => stateInit,
   [CHANGE_FIELD]: (state, { payload: { key, val } }) => ({
     ...state,
     [key]: val,
@@ -38,7 +38,7 @@ const articleCreateRedux = handleActions({
     ...state,
     create,
   }),
-}, initState)
+}, stateInit)
 
 
 articleCreateRedux.init = createAction(INIT)

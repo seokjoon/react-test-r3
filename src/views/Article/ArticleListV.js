@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import r3Api from '../../helpers/r3Api'
+import { Link } from 'react-router-dom'
+import r3Const from '../../helpers/r3Const'
 
 const ArticleListV = ({ match }) => {
 
@@ -19,7 +21,11 @@ const ArticleListV = ({ match }) => {
   }, [match])
 
   const outItems = items.map(item => (
-    <div key={item._id}>{item.title}</div>
+    <div key={item._id}>
+      <Link to={r3Const.pathPublic + '/article/' + item._id}>
+        {item.title}
+      </Link>
+    </div>
   ))
 
   return (

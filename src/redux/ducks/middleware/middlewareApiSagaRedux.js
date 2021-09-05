@@ -10,7 +10,7 @@ const GET_USERS = 'middlewareApiSaga/GET_USERS'
 const GET_USERS_SUCCESS = 'middlewareApiSaga/GET_USERS_SUCCESS'
 
 
-const initState = {
+const stateInit = {
   post: null,
   users: null,
 }
@@ -25,7 +25,7 @@ const middlewareApiSagaRedux = handleActions({
     ...state,
     users: action.payload,
   }),
-}, initState)
+}, stateInit)
 
 
 

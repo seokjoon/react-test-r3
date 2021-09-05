@@ -7,7 +7,7 @@ const REMOVE = 'reduxTodoRedux/REMOVE'
 const TOGGLE = 'reduxTodoRedux/TOGGLE'
 
 
-const initState = {
+const stateInit = {
   input: '',
   todos: [
     {
@@ -18,7 +18,7 @@ const initState = {
   ],
 }
 
-// function reduxTodoRedux(state = initState, action) {
+// function reduxTodoRedux(state = stateInit, action) {
 //   switch (action.type) {
 //     case CHANGE_INPUT:
 //       return {
@@ -61,7 +61,7 @@ const reduxTodoRedux = handleActions({
     ...state,
     todos: state.todos.map(todo => todo.id === id ? { ...todo, done: !todo.done } : todo)
   }),
-}, initState)
+}, stateInit)
 
 
 // export const changeInput = input => ({

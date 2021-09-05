@@ -15,7 +15,7 @@ const CREATE_TOKEN_SUCCESS = 'userCreate/CREATE_TOKEN_SUCCESS'
 const INIT_FORM = 'userCreate/INIT_FORM'
 
 
-const initState = {
+const stateInit = {
   create: {
     password: '',
     passwordConfirm: '',
@@ -55,10 +55,10 @@ const userCreateRedux = handleActions({
   }),
   [INIT_FORM]: (state, { payload: form }) => ({
     ...state,
-    [form]: initState[form],
+    [form]: stateInit[form],
     userCreateError: null, //폼 전환시 회원 인증 에러 초기화
   }),
-}, initState)
+}, stateInit)
 
 
 userCreateRedux.changeField = createAction(

@@ -5,12 +5,12 @@ const DECREASE = 'middlewareCounter/DECREASE'
 const INCREASE = 'middlewareCounter/INCREASE'
 
 
-const initState = 0
+const stateInit = 0
 
 const middlewareCounterRedux = handleActions({
   [DECREASE]: state => state - 1,
   [INCREASE]: state => state + 1,
-}, initState)
+}, stateInit)
 
 
 middlewareCounterRedux.decrease = createAction(DECREASE)

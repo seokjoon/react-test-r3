@@ -9,12 +9,12 @@ const DECREASE_SAGA = 'middlewareCounterSaga/DECREASE_SAGA'
 const INCREASE_SAGA = 'middlewareCounterSaga/INCREASE_SAGA'
 
 
-const initState = 0
+const stateInit = 0
 
 const middlewareCounterSagaRedux = handleActions({
   [DECREASE]: state => state - 1,
   [INCREASE]: state => state + 1,
-}, initState)
+}, stateInit)
 
 
 middlewareCounterSagaRedux.decrease = createAction(DECREASE, () => undefined)

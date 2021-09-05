@@ -11,7 +11,7 @@ const CREATE_TOKEN_TMP = 'user/CREATE_TOKEN_TMP'
 const DESTROY_TOKEN = 'user/DESTROY_TOKEN'
 
 
-const initState = {
+const stateInit = {
   checkError: null,
   user: null,
 }
@@ -35,7 +35,7 @@ const userRedux = handleActions({
     ...state,
     user: null,
   }),
-}, initState)
+}, stateInit)
 
 
 userRedux.check = createAction(CHECK)

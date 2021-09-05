@@ -5,12 +5,12 @@ const DECREASE = 'middlewareCounterThunk/DECREASE'
 const INCREASE = 'middlewareCounterThunk/INCREASE'
 
 
-const initState = 0
+const stateInit = 0
 
 const middlewareCounterThunkRedux = handleActions({
   [DECREASE]: state => state - 1,
   [INCREASE]: state => state + 1,
-}, initState)
+}, stateInit)
 
 
 const decrease = createAction(DECREASE)

@@ -11,7 +11,7 @@ const GET_USERS = 'middlewareApiThunk/GET_USERS'
 const GET_USERS_SUCCESS = 'middlewareApiThunk/GET_USERS_SUCCESS'
 
 
-const initState = {
+const stateInit = {
   // loading: {
   //   GET_POST: false,
   //   GET_USERS: false,
@@ -66,7 +66,7 @@ const middlewareApiThunkRedux = handleActions({
     // },
     users: action.payload,
   }),
-}, initState)
+}, stateInit)
 
 
 

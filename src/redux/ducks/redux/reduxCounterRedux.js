@@ -5,11 +5,11 @@ const DECREASE = 'reduxCounterRedux/DECREASE'
 const INCREASE = 'reduxCounterRedux/INCREASE'
 
 
-const initState = {
+const stateInit = {
   num: 0,
 }
 
-// function reduxCounterRedux(state = initState, action) {
+// function reduxCounterRedux(state = stateInit, action) {
 //   switch (action.type) {
 //     case DECREASE:
 //       return {
@@ -28,7 +28,7 @@ const reduxCounterRedux = handleActions(
     [DECREASE]: (state, action) => ({ num: state.num - 1 }),
     [INCREASE]: (state, action) => ({ num: state.num + 1 }),
   },
-  initState,
+  stateInit,
 )
 
 

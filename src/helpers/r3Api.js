@@ -5,10 +5,10 @@ const r3Api = {
 
   article: {
     createItem: ({ ...rest }) => r3Client.post('/api/articles', { ...rest }),
-    // deleteItem: ({ id }) => r3Client.delete('/api/articles/' + id),
-    // readItem: ({ id }) => r3Client.get('/api/articles/' + id),
+    // deleteItem: (id) => r3Client.delete('/api/articles/' + id),
+    readItem: (id) => r3Client.get('/api/articles/' + id),
     readItems: ({...rest}) => r3Client.get('/api/articles', { params: { ...rest } }), //rest: limit, page, tag, username
-    // updateItem: ({ id }) => r3Client.put('/api/articles/' + id),
+    // updateItem: (id) => r3Client.put('/api/articles/' + id),
   },
 
   middleware: {

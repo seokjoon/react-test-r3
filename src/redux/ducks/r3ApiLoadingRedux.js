@@ -5,7 +5,7 @@ const START = 'r3ApiLoading/START'
 const STOP = 'r3ApiLoading/STOP'
 
 
-const initState = {}
+const stateInit = {}
 
 const r3ApiLoadingRedux = handleActions({
   [START]: (state, action) => ({
@@ -16,7 +16,7 @@ const r3ApiLoadingRedux = handleActions({
     ...state,
     [action.payload]: false,
   }),
-}, initState)
+}, stateInit)
 
 
 
