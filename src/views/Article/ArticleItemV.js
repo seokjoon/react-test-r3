@@ -30,7 +30,7 @@ const ArticleItemV = ({ article, error, loading }) => {
       <h3>ArticleItemV</h3>
       <ArticleHead>
         <ArticleTitle>{ title }</ArticleTitle>
-        <div>{user.username}</div>
+        <div>{user && user.username}</div>
         <div>{ new Date(dateCreate).toLocaleDateString() }</div>
         <ArticleTags>{ tags.map((tag, idx) => (<div key={idx}># {tag}</div>)) }</ArticleTags>
       </ArticleHead>
