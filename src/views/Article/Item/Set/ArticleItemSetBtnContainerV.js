@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ArticleItemSetBtnV from './ArticleItemSetBtnV'
-import articleCreateRedux from '../../../redux/ducks/article/articleCreateRedux'
+import articleCreateRedux from '../../../../redux/ducks/article/articleCreateRedux'
 import { withRouter } from 'react-router-dom'
-import r3Const from '../../../helpers/r3Const'
+import r3Const from '../../../../helpers/r3Const'
 
 
 const ArticleItemSetBtnContainerV = ({ history }) => {

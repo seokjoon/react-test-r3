@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Desc = styled.div``
 
-const ArticleListItemDescV = ({ dateCreate, username }) => {
+const ArticleDescV = ({ dateCreate, username }) => {
   return (
     <Desc>
       <span>
@@ -17,4 +17,4 @@ const ArticleListItemDescV = ({ dateCreate, username }) => {
   )
 }
 
-export default ArticleListItemDescV
+export default ArticleDescV

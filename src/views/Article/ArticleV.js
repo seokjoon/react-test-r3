@@ -2,7 +2,7 @@ import React from 'react'
 import r3Const from '../../helpers/r3Const'
 import { Link, Route } from 'react-router-dom'
 import ArticleListContainerV from './List/ArticleListContainerV'
-import ArticleItemSetV from './Item/ArticleItemSetV'
+import ArticleItemSetV from './Item/Set/ArticleItemSetV'
 import ArticleEditorV from './Editor/ArticleEditorV'
 import ArticleItemContainerV from './Item/ArticleItemContainerV'
 

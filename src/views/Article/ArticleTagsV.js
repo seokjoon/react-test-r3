@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const TagsBlock = styled.div``
 
-const ArticleListItemTagsV = ({ tags }) => {
+const ArticleTagsV = ({ tags }) => {
   return (
     <TagsBlock>
       { tags.map(tag => (
@@ -16,4 +16,4 @@ const ArticleListItemTagsV = ({ tags }) => {
   )
 }
 
-export default ArticleListItemTagsV
+export default ArticleTagsV

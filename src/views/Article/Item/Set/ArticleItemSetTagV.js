@@ -26,7 +26,7 @@ const TagList = React.memo(({ onDelete, tags }) => (
 ))
 
 
-const ArticleTagV = ({ onChangeTags, tags }) => {
+const ArticleItemSetTagV = ({ onChangeTags, tags }) => {
 
   const [input, setInput] = useState('')
   const [tagsLocal, setTagsLocal] = useState([])
@@ -78,4 +78,4 @@ const ArticleTagV = ({ onChangeTags, tags }) => {
   )
 }
 
-export default ArticleTagV
+export default ArticleItemSetTagV
