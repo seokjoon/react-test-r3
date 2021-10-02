@@ -1,10 +1,10 @@
 import React from 'react'
 import r3Const from '../../helpers/r3Const'
 import { Link, Route } from 'react-router-dom'
-import ArticleListV from './ArticleListV'
-import ArticleItemSetV from './ArticleItemSetV'
-import ArticleEditorV from './ArticleEditorV'
-import ArticleItemContainerV from './ArticleItemContainerV'
+import ArticleListContainerV from './List/ArticleListContainerV'
+import ArticleItemSetV from './Item/ArticleItemSetV'
+import ArticleEditorV from './Editor/ArticleEditorV'
+import ArticleItemContainerV from './Item/ArticleItemContainerV'
 
 const ArticleV = () => {
   const path = r3Const.pathPublic + '/article'
@@ -26,7 +26,7 @@ const ArticleV = () => {
         <Route path={[
           path + '/',
           path + '/user/:username',
-        ]} component={ArticleListV} exact />
+        ]} component={ArticleListContainerV} exact />
       </div>
     </div>
   )

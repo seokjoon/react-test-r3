@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import StyleUserCreateButton from '../Style/StyleUserCreateButton'
+import StyleUserCreateButton from '../../Style/StyleUserCreateButton'
 
 
 const ArticleBtnBlock = styled.div``
@@ -8,7 +8,7 @@ const ArticleBtnBlock = styled.div``
 const ButtonStyled = styled(StyleUserCreateButton)``
 
 
-const ArticleBtnV = ({ onCancel, onCreate }) => {
+const ArticleItemSetBtnV = ({ onCancel, onCreate }) => {
   return (
     <ArticleBtnBlock>
       <ButtonStyled cyan onClick={onCreate}>
@@ -21,4 +21,4 @@ const ArticleBtnV = ({ onCancel, onCreate }) => {
   )
 }
 
-export default ArticleBtnV
+export default ArticleItemSetBtnV

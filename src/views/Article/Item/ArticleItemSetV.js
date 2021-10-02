@@ -1,8 +1,8 @@
 import React from 'react'
-import StyleResponsive from '../Style/StyleResponsive'
-import ArticleEditorContainerV from './ArticleEditorContainerV'
-import ArticleTagContainerV from './ArticleTagContainerV'
-import ArticleBtnContainerV from './ArticleBtnContainerV'
+import StyleResponsive from '../../Style/StyleResponsive'
+import ArticleEditorContainerV from '../Editor/ArticleEditorContainerV'
+import ArticleTagContainerV from '../ArticleTagContainerV'
+import ArticleBtnContainerV from './ArticleItemSetBtnContainerV'
 
 const ArticleItemSetV = () => {
   return (

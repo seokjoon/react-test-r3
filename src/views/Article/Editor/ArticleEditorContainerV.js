@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useCallback, useEffect } from 'react'
-import articleCreateRedux from '../../redux/ducks/article/articleCreateRedux'
+import articleCreateRedux from '../../../redux/ducks/article/articleCreateRedux'
 import ArticleEditorV from './ArticleEditorV'
 
 

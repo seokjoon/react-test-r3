@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import articleReadRedux from '../../redux/ducks/article/articleReadRedux'
+import articleReadRedux from '../../../redux/ducks/article/articleReadRedux'
 import ArticleItemV from './ArticleItemV'
 
 const ArticleItemContainerV = ({ match }) => {

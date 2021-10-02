@@ -20,7 +20,6 @@ const stateInit = {
 }
 
 const articleCreateRedux = handleActions({
-  [INIT]: state => stateInit,
   [CHANGE_FIELD]: (state, { payload: { key, val } }) => ({
     ...state,
     [key]: val,
@@ -38,6 +37,7 @@ const articleCreateRedux = handleActions({
     ...state,
     create,
   }),
+  [INIT]: state => stateInit,
 }, stateInit)
 
 

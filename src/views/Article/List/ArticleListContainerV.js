@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import r3Api from '../../helpers/r3Api'
+import r3Api from '../../../helpers/r3Api'
 import { Link } from 'react-router-dom'
-import r3Const from '../../helpers/r3Const'
+import r3Const from '../../../helpers/r3Const'
+import ArticleListV from './ArticleListV'
 
-const ArticleListV = ({ match }) => {
+const ArticleListContainerV = ({ match }) => {
 
   const [ items, setItems ] = useState([])
 
@@ -34,8 +35,10 @@ const ArticleListV = ({ match }) => {
       <div>
         { outItems }
       </div>
+
+      <ArticleListV />
     </div>
   )
 }
 
-export default ArticleListV
+export default ArticleListContainerV
