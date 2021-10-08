@@ -3,11 +3,11 @@ import r3Saga from '../../../helpers/r3Saga'
 import r3Api from '../../../helpers/r3Api'
 import { takeLatest } from 'redux-saga/effects'
 
+
 const READ = 'articleRead/READ'
 const READ_FAIL = 'articleRead/READ_FAIL'
 const READ_SUCCESS = 'articleRead/READ_SUCCESS'
 const READ_UNLOAD = 'articleRead/READ_UNLOAD'
-
 
 const stateInit = {
   article: null,

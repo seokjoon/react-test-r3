@@ -3,24 +3,26 @@ import styled from 'styled-components'
 import StyleResponsive from '../../Style/StyleResponsive'
 
 
-const ArticleItemBlock = styled(StyleResponsive)``
+const Content = styled.div``
 
-const ArticleHead = styled.div``
+const Desc = styled.div``
 
-const ArticleTitle = styled.div``
+const ItemBlock = styled(StyleResponsive)``
 
-const ArticleTags = styled.div``
+const Head = styled.div``
 
-const ArticleContent = styled.div``
+const Tags = styled.div``
+
+const Title = styled.div``
 
 
 const ArticleItemV = ({ article, error, loading }) => {
 
   if(error) {
     return (
-      <ArticleItemBlock>
+      <ItemBlock>
         {(((error.response) && (error.response.status === 404)) ? '존재하지 않는 아티클' : '오류 발생')}
-      </ArticleItemBlock>
+      </ItemBlock>
     )
   }
   if((loading) || (!(article))) return null
@@ -28,19 +30,18 @@ const ArticleItemV = ({ article, error, loading }) => {
   const { content, dateCreate, tags, title, user, } = article
 
   return (
-    <ArticleItemBlock>
+    <ItemBlock>
       <h3>ArticleItemV</h3>
-
-      <ArticleHead>
-        <ArticleTitle>{ title }</ArticleTitle>
-        <div>{user && user.username}</div>
-        <div>{ new Date(dateCreate).toLocaleDateString() }</div>
-        <ArticleTags>{ tags.map((tag, idx) => (<div key={idx}># {tag}</div>)) }</ArticleTags>
-      </ArticleHead>
-
-      <ArticleContent dangerouslySetInnerHTML={{ __html: content }} />
-
-    </ArticleItemBlock>
+      <Head>
+        <Title>{ title }</Title>
+        <Desc>
+          <div>{user && user.username}</div>
+          <div>{ new Date(dateCreate).toLocaleDateString() }</div>
+        </Desc>
+        <Tags>{ tags.map((tag, idx) => (<div key={idx}># {tag}</div>)) }</Tags>
+      </Head>
+      <Content dangerouslySetInnerHTML={{ __html: content }} />
+    </ItemBlock>
   )
 }
 
