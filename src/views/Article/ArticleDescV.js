@@ -11,7 +11,7 @@ const ArticleDescV = ({ dateCreate, username }) => {
         <b>
           <Link to={`/article/user/${username}`}>{ username }</Link>
         </b>
-      </span>
+      </span>&nbsp;
       <span>{ new Date(dateCreate).toLocaleDateString() }</span>
     </Desc>
   )

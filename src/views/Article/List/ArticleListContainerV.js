@@ -31,7 +31,7 @@ const ArticleListContainerV = ({ match }) => {
 
   return (
     <div>
-      <h3>ArticleListV</h3>
+      <h3>ArticleListContainerV</h3>
       <div>
         { outItems }
       </div>

@@ -1,17 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import StyleResponsive from '../../Style/StyleResponsive'
+import ArticleDescV from '../ArticleDescV'
+import ArticleTagsV from '../ArticleTagsV'
 
 
 const Content = styled.div``
 
-const Desc = styled.div``
-
 const ItemBlock = styled(StyleResponsive)``
 
 const Head = styled.div``
-
-const Tags = styled.div``
 
 const Title = styled.div``
 
@@ -34,11 +32,8 @@ const ArticleItemV = ({ article, error, loading }) => {
       <h3>ArticleItemV</h3>
       <Head>
         <Title>{ title }</Title>
-        <Desc>
-          <div>{user && user.username}</div>
-          <div>{ new Date(dateCreate).toLocaleDateString() }</div>
-        </Desc>
-        <Tags>{ tags.map((tag, idx) => (<div key={idx}># {tag}</div>)) }</Tags>
+        <ArticleDescV dateCreate={dateCreate} username={user && user.username} />
+        <ArticleTagsV tags={tags} />
       </Head>
       <Content dangerouslySetInnerHTML={{ __html: content }} />
     </ItemBlock>

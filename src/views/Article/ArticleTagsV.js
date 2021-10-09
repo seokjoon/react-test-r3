@@ -7,11 +7,7 @@ const TagsBlock = styled.div``
 const ArticleTagsV = ({ tags }) => {
   return (
     <TagsBlock>
-      { tags.map(tag => (
-        <Link to={`/?tag=${tag}`} key={tag}>
-          #{ tag }
-        </Link>
-      )) }
+      { tags.map(tag => ( <Link to={`/?tag=${tag}`} key={tag}> #{ tag } </Link> )) }
     </TagsBlock>
   )
 }

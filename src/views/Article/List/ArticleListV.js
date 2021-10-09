@@ -1,11 +1,12 @@
 import React from 'react'
-
 import styled from 'styled-components'
 import ArticleListItemV from './ArticleListItemV'
 
-const SetButtonWrapper = styled.div``
 
 const ItemsBlock = styled.div``
+
+const SetButtonWrapper = styled.div``
+
 
 const ArticleListV = () => {
   return (
