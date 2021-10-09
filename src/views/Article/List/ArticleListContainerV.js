@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import articlesReadRedux from '../../../redux/ducks/article/articlesReadRedux'
 import ArticleListV from './ArticleListV'
 import { withRouter } from 'react-router-dom'
+import qs from 'qs'
 
 
 const ArticleListContainerV = ({ location }) => {
@@ -17,9 +18,11 @@ const ArticleListContainerV = ({ location }) => {
   }))
 
   useEffect(() => {
-    const { page, tag, username, } = location.search; //console.log(location)
+    const { page, tag, username, } = qs.parse(location.search, {
+      ignoreQueryPrefix: true, // '?' 생략
+    })
     dispatch(articlesReadRedux.read({ page, tag, username, }))
-  }, [dispatch, location])
+  }, [dispatch, location.search])
 
   return (
     <ArticleListV
