@@ -9,6 +9,7 @@ const READ_FAIL = 'articleRead/READ_FAIL'
 const READ_SUCCESS = 'articleRead/READ_SUCCESS'
 const READ_UNLOAD = 'articleRead/READ_UNLOAD'
 
+
 const stateInit = {
   article: null,
   error: null,

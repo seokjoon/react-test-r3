@@ -1,43 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import r3Api from '../../../helpers/r3Api'
-import { Link } from 'react-router-dom'
-import r3Const from '../../../helpers/r3Const'
+import React, { useEffect, } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import articlesReadRedux from '../../../redux/ducks/article/articlesReadRedux'
 import ArticleListV from './ArticleListV'
 
 const ArticleListContainerV = ({ match }) => {
 
-  const [ items, setItems ] = useState([])
+  const { page, tag, username, } = match.params
 
-  const readItems = async ({ ...rest }) => {
-    const res = await r3Api.article.readItems(rest); //console.log(res.data)
-    setItems(res.data)
-  }
+  const dispatch = useDispatch()
+
+  const { articles, error, loading, user, } = useSelector(({ articlesRedux, r3ApiLoadingRedux, }) => ({
+    articles: articlesReadRedux.articles,
+    error: articlesReadRedux.error,
+    loading: r3ApiLoadingRedux.start, //loading['articlesRead/READ'],
+    user: {}, //XXX
+  }))
 
   useEffect(() => {
-    const { username } = match.params; //console.log(match, username)
-    readItems({
-      limit: 5,
-      username,
-    }).then()
-  }, [match])
-
-  const outItems = items.map(item => (
-    <div key={item._id}>
-      <Link to={r3Const.pathPublic + '/article/' + item._id}>
-        {item.title}
-      </Link>
-    </div>
-  ))
+    dispatch(articlesReadRedux.read({ page, tag, username, }))
+  }, [dispatch, page, tag, username,])
 
   return (
-    <div>
-      <h3>ArticleListContainerV</h3>
-      <div>
-        { outItems }
-      </div>
-
-      <ArticleListV />
-    </div>
+    <ArticleListV
+      articles={articles}
+      error={error}
+      loading={loading}
+      isAvailBtn={user}
+    />
   )
 }
 
