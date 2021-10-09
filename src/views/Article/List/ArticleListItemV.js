@@ -8,7 +8,7 @@ const ItemBlock = styled.div``
 
 const ArticleListItemV = ({ article }) => {
 
-  const { content, dateCreate, id, tags, title, user, } = article
+  // const { content, dateCreate, id, tags, title, user, } = article
 
   return (
     <ItemBlock>

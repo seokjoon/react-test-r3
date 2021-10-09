@@ -7,6 +7,7 @@ import { takeLatest } from 'redux-saga/effects'
 const READ = 'articlesRead/READ'
 const READ_FAIL = 'articlesRead/READ_FAIL'
 const READ_SUCCESS = 'articlesRead/READ_SUCCESS'
+// const READ_UNLOAD = 'articlesRead/READ_UNLOAD'
 
 const stateInit = {
   articles: null,
@@ -16,6 +17,7 @@ const stateInit = {
 const articlesReadRedux = handleActions({
   [READ_FAIL]: (state, { payload: error }) => ({ ...state, error, }),
   [READ_SUCCESS]: (state, { payload: articles }) => ({ ...state, articles, }),
+  // [READ_UNLOAD]: () => stateInit,
 }, stateInit)
 
 articlesReadRedux.read = createAction(READ, ({ page, tag, username, }) => ({ page, tag, username, }))
