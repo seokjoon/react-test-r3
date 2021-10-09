@@ -4,11 +4,12 @@ import ArticleDescV from '../ArticleDescV'
 import ArticleTagsV from '../ArticleTagsV'
 
 
-
-
 const ItemBlock = styled.div``
 
-const ArticleListItemV = () => {
+const ArticleListItemV = ({ article }) => {
+
+  const { content, dateCreate, id, tags, title, user, } = article
+
   return (
     <ItemBlock>
       <h2>제목</h2>

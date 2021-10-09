@@ -13,7 +13,7 @@ const ArticleListContainerV = ({ match }) => {
     articles: articlesReadRedux.articles,
     error: articlesReadRedux.error,
     loading: r3ApiLoadingRedux.start, //loading['articlesRead/READ'],
-    user: {}, //XXX
+    user: {}, //TODO
   }))
 
   useEffect(() => {
