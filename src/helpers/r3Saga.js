@@ -12,6 +12,7 @@ const r3Saga = {
       try {
         const res = yield call(req, action.payload)
         yield put({
+          meta: res,
           payload: res.data,
           type: SUCCESS,
         })

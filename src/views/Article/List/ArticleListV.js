@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ArticleListItemV from './ArticleListItemV'
 import ArticleItemSetBtnContainerV from '../Item/Set/ArticleItemSetBtnContainerV'
+import ArticlePaginationContainerV from '../ArticlePaginationContainerV'
 
 
 const ItemsBlock = styled.div``
@@ -26,6 +27,9 @@ const ArticleListV = ({ articles, error, isAvailBtn, loading, }) => {
           { articles.map(article => <ArticleListItemV article={article} key={article._id} />) }
         </div>
       )}
+
+      <ArticlePaginationContainerV />
+
     </ItemsBlock>
   )
 }

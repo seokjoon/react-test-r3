@@ -12,11 +12,16 @@ const READ_SUCCESS = 'articlesRead/READ_SUCCESS'
 const stateInit = {
   articles: null,
   error: null,
+  pageLast: 1,
 }
 
 const articlesReadRedux = handleActions({
   [READ_FAIL]: (state, { payload: error }) => ({ ...state, error, }),
-  [READ_SUCCESS]: (state, { payload: articles }) => ({ ...state, articles, }),
+  [READ_SUCCESS]: (state, { payload: articles, meta: res }) => ({
+    ...state,
+    articles,
+    pageLast: parseInt(res.headers['pageLast'], 10)
+  }),
   // [READ_UNLOAD]: () => stateInit,
 }, stateInit)
 
