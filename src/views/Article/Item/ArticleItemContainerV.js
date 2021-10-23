@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import articleReadRedux from '../../../redux/ducks/article/articleReadRedux'
 import ArticleItemV from './ArticleItemV'
+import ArticleActionButtonsV from './ArticleActionButtonsV'
 
 
 const ArticleItemContainerV = ({ match }) => {
@@ -26,6 +27,7 @@ const ArticleItemContainerV = ({ match }) => {
 
   return (
     <ArticleItemV
+      actionButtons={<ArticleActionButtonsV />}
       article={article}
       error={error}
       loading={loading}

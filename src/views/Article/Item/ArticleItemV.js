@@ -14,7 +14,7 @@ const Head = styled.div``
 const Title = styled.div``
 
 
-const ArticleItemV = ({ article, error, loading }) => {
+const ArticleItemV = ({ article, error, loading, actionButtons }) => {
 
   if(error) {
     return (
@@ -35,6 +35,7 @@ const ArticleItemV = ({ article, error, loading }) => {
         <ArticleDescV dateCreate={dateCreate} username={user && user.username} />
         <ArticleTagsV tags={tags} />
       </Head>
+      { actionButtons }
       <Content dangerouslySetInnerHTML={{ __html: content }} />
     </ItemBlock>
   )
