@@ -1,11 +1,10 @@
-import React, { Fragment } from 'react'
-import RouteV from './Route/RouteV'
+import React from 'react'
 
 const V = () => {
   return (
-    <Fragment>
-      <RouteV />
-    </Fragment>
+    <div>
+      <h3>V: deprecated</h3>
+    </div>
   )
 }
 

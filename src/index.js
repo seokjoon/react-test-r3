@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 // import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import V from './views/V'
 import { BrowserRouter } from 'react-router-dom'
 import { applyMiddleware, createStore } from 'redux'
 import rootReducer, { rootSaga } from './redux/ducks'
@@ -14,6 +13,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import ReduxThunk from 'redux-thunk'
 import createMiddlewareSaga from 'redux-saga'
 import userRedux from './redux/ducks/user/userRedux'
+import RouteV from './views/Route/RouteV'
 
 
 //const store = createStore(rootReducer)
@@ -52,7 +52,7 @@ ReactDOM.render(
   // </React.StrictMode}>,
   <Provider store={store}>
     <BrowserRouter>
-      <V />
+      <RouteV />
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')
