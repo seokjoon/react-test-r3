@@ -1,9 +1,12 @@
 import { useSelector } from 'react-redux'
 import qs from 'qs'
 import ArticlePaginationV from './ArticlePaginationV'
-import { withRouter } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 
-const ArticlePaginationContainerV = ({ location, }) => {
+const ArticlePaginationContainerV = () => {
+
+  const location = useLocation()
 
   const { articles, loading, pageLast } = useSelector(({ articlesReadRedux, r3ApiLoadingRedux }) => ({
     articles: articlesReadRedux.articles,
@@ -26,4 +29,5 @@ const ArticlePaginationContainerV = ({ location, }) => {
 }
 
 
-export default withRouter(ArticlePaginationContainerV)
+// export default withRouter(ArticlePaginationContainerV)
+export default ArticlePaginationContainerV

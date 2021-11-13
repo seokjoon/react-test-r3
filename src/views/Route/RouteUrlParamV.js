@@ -1,8 +1,9 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
-const RouteUrlParamV = ({match}) => {
+const RouteUrlParamV = () => {
 
-  const {foo} = match.params
+  const { foo } = useParams()
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link, Route, Routes, } from 'react-router-dom'
 import r3Const from '../../helpers/r3Const'
 import RouteFooV from './RouteFooV'
 import RouteSwitchDefaultV from './RouteSwitchDefaultV'
@@ -16,10 +16,10 @@ const RouteSwitchV = () => {
         <li> <Link to={path + '/bar'}>BAR</Link> </li>
       </ul>
       <div>
-        <Switch>
+        <Routes>
           <Route path={path + '/foo'} component={RouteFooV} />
           <Route component={RouteSwitchDefaultV} />
-        </Switch>
+        </Routes>
       </div>
     </div>
   )

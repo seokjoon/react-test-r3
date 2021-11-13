@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import userCreateRedux from '../../redux/ducks/user/userCreateRedux'
 import UserCreateComV from './UserCreateComV'
 import userRedux from '../../redux/ducks/user/userRedux'
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 import r3Const from '../../helpers/r3Const'
 
 const UserCreateTokenContainerV = ({ history }) => {
@@ -68,4 +68,5 @@ const UserCreateTokenContainerV = ({ history }) => {
   )
 }
 
-export default withRouter(UserCreateTokenContainerV)
+// export default withRouter(UserCreateTokenContainerV)
+export default UserCreateTokenContainerV

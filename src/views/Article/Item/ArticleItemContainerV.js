@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react'
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import articleReadRedux from '../../../redux/ducks/article/articleReadRedux'
 import ArticleItemV from './ArticleItemV'
 import ArticleActionButtonsV from './ArticleActionButtonsV'
+import { useParams } from 'react-router-dom'
 
 
-const ArticleItemContainerV = ({ match }) => {
-  const { id } = match.params
+const ArticleItemContainerV = () => {
+
+  const { id } = useParams()
 
   const dispatch = useDispatch()
 
@@ -36,4 +38,5 @@ const ArticleItemContainerV = ({ match }) => {
 }
 
 
-export default withRouter(ArticleItemContainerV)
+// export default withRouter(ArticleItemContainerV)
+export default ArticleItemContainerV

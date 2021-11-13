@@ -2,11 +2,14 @@ import React, { useEffect, } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import articlesReadRedux from '../../../redux/ducks/article/articlesReadRedux'
 import ArticleListV from './ArticleListV'
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 import qs from 'qs'
+import { useLocation } from 'react-router-dom'
 
 
-const ArticleListContainerV = ({ location }) => {
+const ArticleListContainerV = () => {
+
+  const location = useLocation()
 
   const dispatch = useDispatch()
 
@@ -34,4 +37,5 @@ const ArticleListContainerV = ({ location }) => {
   )
 }
 
-export default withRouter(ArticleListContainerV)
+// export default withRouter(ArticleListContainerV)
+export default ArticleListContainerV

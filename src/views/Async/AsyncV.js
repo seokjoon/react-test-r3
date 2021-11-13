@@ -1,8 +1,6 @@
 import React from 'react'
 import r3Const from '../../helpers/r3Const'
-import { Link, Route } from 'react-router-dom'
-import AsyncAwaitAxiosV from './AsyncAwaitAxiosV'
-import AsyncHookPromiseV from './AsyncHookPromiseV'
+import { Link, Outlet, } from 'react-router-dom'
 
 const AsyncV = () => {
 
@@ -16,8 +14,7 @@ const AsyncV = () => {
         <li> <Link to={path + '/asyncHookPromise'} >AsyncHookPromise</Link> </li>
       </ul>
       <div>
-        <div><Route path={path + '/asyncAwaitAxios'} component={AsyncAwaitAxiosV} /></div>
-        <div><Route path={path + '/asyncHookPromise'} component={AsyncHookPromiseV} /></div>
+        <Outlet />
       </div>
     </div>
   )

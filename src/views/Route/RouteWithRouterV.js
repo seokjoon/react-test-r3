@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 
 const RouteWithRouterV = ({ location, match, history }) => {
   return (
@@ -22,4 +22,6 @@ const RouteWithRouterV = ({ location, match, history }) => {
   )
 }
 
-export default withRouter(RouteWithRouterV)
+// export default withRouter(RouteWithRouterV)
+export default RouteWithRouterV
+
