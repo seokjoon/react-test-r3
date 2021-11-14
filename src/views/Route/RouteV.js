@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Route, Routes, } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 import r3Const from '../../helpers/r3Const'
 import R3Route from '../../helpers/r3Route'
 
@@ -33,23 +33,6 @@ const RouteV = () => {
         <R3Route />
 
         {/*<Routes>*/}
-        {/*  <Route path={path + '/'} element={<RouteIndexV />}/>*/}
-        {/*  <Route path={pathArticle} element={<ArticleV />}>*/}
-        {/*    <Route path={pathArticle + '/editor'} element={<ArticleEditorV/>}/>*/}
-        {/*    <Route path={pathArticle + '/:id'} element={<ArticleItemContainerV/>}/>*/}
-        {/*    <Route path={pathArticle + '/set/:id'} element={<ArticleItemSetV/>}/>*/}
-        {/*    /!*<Route path={[ pathArticle + '/', pathArticle + '/user/:username', ]} element={<ArticleListContainerV/>}/>*!/*/}
-        {/*    <Route path={pathArticle + '/'} element={<ArticleListContainerV />}/>*/}
-        {/*    <Route path={pathArticle + '/user/:username'} element={<ArticleListContainerV />}/>*/}
-        {/*  </Route>*/}
-        {/*  <Route path={pathAsync} element={<AsyncV />}>*/}
-        {/*    <Route path={pathAsync + '/asyncAwaitAxios'} element={<AsyncAwaitAxiosV />} />*/}
-        {/*    <Route path={pathAsync + '/asyncHookPromise'} element={<AsyncHookPromiseV />} />*/}
-        {/*  </Route>*/}
-        {/*  <Route path={pathContext} element={<ContextV />}>*/}
-        {/*    <Route path={pathContext + '/contextFoo'} element={<ContextFooV />} />*/}
-        {/*    <Route path={pathContext + '/contextDynamic'} element={<ContextDynamicV />} />*/}
-        {/*  </Route>*/}
         {/*  <Route path={pathHook} element={<HookV />}>*/}
         {/*    <Route path={pathHook + '/useCustom'} element={<HookUseCustomV />} />*/}
         {/*    <Route path={pathHook + '/useCallback'} element={<HookUseCallbackV />} />*/}
