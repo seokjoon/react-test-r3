@@ -1,23 +1,16 @@
 import React from 'react'
-import { Link, Route } from 'react-router-dom'
-import r3Const from '../../helpers/r3Const'
-import ReduxCounterV from './ReduxCounterV'
-import ReduxTodoV from './ReduxTodoV'
+import { Link, Outlet } from 'react-router-dom'
 
 const ReduxV = () => {
-
-  const path = r3Const.pathPublic + '/redux'
-
   return (
     <div>
       <h3>ReduxV</h3>
       <ul>
-        <li><Link to={path + '/reduxCounter'}>ReduxCounter</Link></li>
-        <li><Link to={path + '/reduxTodo'}>ReduxTodo</Link></li>
+        <li><Link to={'reduxCounter'}>ReduxCounter</Link></li>
+        <li><Link to={'reduxTodo'}>ReduxTodo</Link></li>
       </ul>
       <div>
-        <div><Route path={path + '/reduxCounter'} component={ReduxCounterV} /></div>
-        <div><Route path={path + '/reduxTodo'} component={ReduxTodoV} /></div>
+        <Outlet />
       </div>
     </div>
   )

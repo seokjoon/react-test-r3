@@ -29,38 +29,7 @@ const RouteV = () => {
       </div>
 
       <div style={{ float: 'left', width: '70%', }}>
-
         <R3Route />
-
-        {/*<Routes>*/}
-        {/*  <Route path={pathHook} element={<HookV />}>*/}
-        {/*    <Route path={pathHook + '/useCustom'} element={<HookUseCustomV />} />*/}
-        {/*    <Route path={pathHook + '/useCallback'} element={<HookUseCallbackV />} />*/}
-        {/*    <Route path={pathHook + '/useMemo'} element={<HookUseMemoV />} />*/}
-        {/*    <Route path={pathHook + '/useReducerInput'} element={<HookUseReducerInputV />} />*/}
-        {/*    <Route path={pathHook + '/useReducer'} element={<HookUseReducerV />} />*/}
-        {/*    <Route path={pathHook + '/useEffect'} element={<HookUseEffectV />} />*/}
-        {/*    <Route path={pathHook + '/useState'} element={<HookUseStateV />} />*/}
-        {/*  </Route>*/}
-        {/*  <Route path={pathImmutable} element={<ImmutableV />}>*/}
-        {/*    <Route path={pathImmutable + '/legacy'} element={<ImmutableLegacyV />} />*/}
-        {/*    <Route path={pathImmutable + '/immer'} element={<ImmutableImmerV />} />*/}
-        {/*  </Route>*/}
-        {/*  <Route path={pathMiddleware} element={<MiddlewareV />}>*/}
-        {/*  </Route>*/}
-        {/*  <Route path={pathOptima} element={<OptimaV />}>*/}
-        {/*  </Route>*/}
-        {/*  <Route path={pathRedux} element={<ReduxV />}>*/}
-        {/*  </Route>*/}
-        {/*  <Route path={pathRoute} element={<RouteRouteV />}>*/}
-        {/*  </Route>*/}
-        {/*  <Route path={pathSplit} element={<SplitV />}>*/}
-        {/*  </Route>*/}
-        {/*  <Route path={pathStyle} element={<StyleV />}>*/}
-        {/*  </Route>*/}
-        {/*  <Route path={pathUser} element={<UserV />}>*/}
-        {/*  </Route>*/}
-        {/*</Routes>*/}
       </div>
 
       <div style={{ clear: 'both' }}></div>
