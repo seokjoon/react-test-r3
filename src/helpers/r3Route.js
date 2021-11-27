@@ -35,7 +35,7 @@ import MiddlewareCounterSagaContainerV from '../views/Middleware/MiddlewareCount
 import MiddlewareCounterThunkContainerV from '../views/Middleware/MiddlewareCounterThunkContainerV'
 import MiddlewareCounterContainerV from '../views/Middleware/MiddlewareCounterContainerV'
 import OptimaListV from '../views/Optima/OptimaListV'
-import OptimaScrollV from '../views/Optima/OptimaScrollV'
+// import OptimaScrollV from '../views/Optima/OptimaScrollV'
 import ReduxCounterV from '../views/Redux/ReduxCounterV'
 import ReduxTodoV from '../views/Redux/ReduxTodoV'
 import RouteMultiV from '../views/Route/RouteMultiV'
@@ -118,7 +118,7 @@ const R3Route = () => {
       {
         path: r3Const.path.optima , element: <OptimaV />,
         children: [
-          { path: 'scroll', element: <OptimaScrollV /> },
+          // { path: 'scroll', element: <OptimaScrollV /> },
           { path: 'list', element: <OptimaListV /> },
         ],
       },
