@@ -1,6 +1,5 @@
 import { useRoutes } from 'react-router-dom'
 import r3Const from './r3Const'
-import V from '../views/V'
 import ArticleV from '../views/Article/ArticleV'
 import AsyncV from '../views/Async/AsyncV'
 import HookV from '../views/Hook/HookV'
@@ -54,155 +53,135 @@ import StyleResponsiveV from '../views/Style/StyleResponsiveV'
 import StyleUserCreateV from '../views/Style/StyleUserCreateV'
 import UserCreateV from '../views/User/UserCreateV'
 import UserCreateTokenV from '../views/User/UserCreateTokenV'
+import RouteV from '../views/Route/RouteV'
 
 
 const R3Route = () => {
 
   const indexRoute = {
-    path: r3Const.path.index, element: <V />
-  }
-
-  const articleRoute = {
-    path: r3Const.path.article , element: <ArticleV />,
+    path: r3Const.path.index,
+    element: <RouteV />,
     children: [
-      { path: 'editor', element: <ArticleEditorV /> },
-      { path: ':id', element: <ArticleItemContainerV /> },
-      { path: 'set/:id', element: <ArticleItemSetV /> },
-      { path: '', element: <ArticleListContainerV /> },
-      { path: 'user/:username', element: <ArticleListContainerV /> },
-    ],
-  }
-
-  const asyncRoute = {
-    path: r3Const.path.async , element: <AsyncV />,
-    children: [
-      { path: 'asyncAwaitAxios', element: <AsyncAwaitAxiosV /> },
-      { path: 'asyncHookPromise', element: <AsyncHookPromiseV /> },
-    ],
-  }
-
-  const contextRoute = {
-    path: r3Const.path.context , element: <ContextV />,
-    children: [
-      { path: 'contextFoo', element: <ContextFooV /> },
-      { path: 'contextDynamic', element: <ContextDynamicV /> },
-    ],
-  }
-
-  const hookRoute = {
-    path: r3Const.path.hook , element: <HookV />,
-    children: [
-      { path: 'useCustom', element: <HookUseCustomV /> },
-      { path: 'useCallback', element: <HookUseCallbackV /> },
-      { path: 'useMemo', element: <HookUseMemoV /> },
-      { path: 'useReducerInput', element: <HookUseReducerInputV /> },
-      { path: 'useReducer', element: <HookUseReducerV /> },
-      { path: 'useEffect', element: <HookUseEffectV /> },
-      { path: 'useState', element: <HookUseStateV /> },
-    ],
-  }
-
-  const immutableRoute = {
-    path: r3Const.path.immutable , element: <ImmutableV />,
-    children: [
-      { path: 'legacy', element: <ImmutableLegacyV /> },
-      { path: 'immer', element: <ImmutableImmerV />},
-    ],
-  }
-
-  const middlewareRoute = {
-    path: r3Const.path.middleware , element: <MiddlewareV />,
-    children: [
-      { path: 'counter', element: <MiddlewareCounterContainerV /> },
-      { path: 'counterThunk', element:<MiddlewareCounterThunkContainerV /> },
-      { path: 'counterSaga', element: <MiddlewareCounterSagaContainerV /> },
-      { path: 'apiThunk', element: <MiddlewareApiThunkContainerV /> },
-      { path: 'apiSaga', element: <MiddlewareApiSagaContainerV /> },
-    ],
-  }
-
-  const optimaRoute = {
-    path: r3Const.path.optima , element: <OptimaV />,
-    children: [
-      { path: 'scroll', element: <OptimaScrollV /> },
-      { path: 'list', element: <OptimaListV /> },
-    ],
-  }
-
-  const reduxRoute = {
-    path: r3Const.path.redux , element: <ReduxV />,
-    children: [
-      { path: 'reduxCounter', element: <ReduxCounterV /> },
-      { path: 'reduxTodo', element: <ReduxTodoV /> },
-    ],
-  }
-
-  const routeRoute = {
-    path: r3Const.path.route , element: <RouteRouteV />,
-    children: [
-      { path: 'err', element: <RouteMultiV /> },
-      { path: 'na', element: <RouteMultiV /> },
-      { path: 'history', element: <RouteHistoryV /> },
       {
-        path: 'navLink', element: <RouteNavLinkV />,
+        path: r3Const.path.article , element: <ArticleV />,
         children: [
-          { path: 'foo', element: <RouteNavLinkV /> },
-          { path: 'bar', element: <RouteNavLinkV /> },
+          { path: 'editor', element: <ArticleEditorV /> },
+          { path: ':id', element: <ArticleItemContainerV /> },
+          { path: 'set/:id', element: <ArticleItemSetV /> },
+          { path: '', element: <ArticleListContainerV /> },
+          { path: 'user/:username', element: <ArticleListContainerV /> },
         ],
       },
       {
-        path: 'switch', element: <RouteSwitchV />,
+        path: r3Const.path.async , element: <AsyncV />,
         children: [
-          { path: 'foo', element: <RouteSwitchV /> },
-          { path: 'bar', element: <RouteSwitchV /> },
+          { path: 'asyncAwaitAxios', element: <AsyncAwaitAxiosV /> },
+          { path: 'asyncHookPromise', element: <AsyncHookPromiseV /> },
         ],
       },
-      { path: 'urlParam/:foo', element: <RouteUrlParamV /> },
-      { path: 'urlQuery', element: <RouteUrlQueryV /> },
-    ],
-  }
-
-  const splitRoute = {
-    path: r3Const.path.split , element: <SplitV />,
-    children: [
-      { path: 'state', element: <SplitStateV /> },
-      { path: 'lazy', element: <SplitLazyV /> },
-      { path: 'loadableComponent', element: <SplitLoadableComponentV /> },
-    ],
-  }
-
-  const styleRoute = {
-    path: r3Const.path.style , element: <StyleV />,
-    children: [
-      { path: 'css', element: <StyleCssV /> },
-      { path: 'cssMod', element: <StyleCssModV /> },
-      { path: 'responsive', element: <StyleResponsiveV /> },
-      { path: 'userCreate', element: <StyleUserCreateV /> },
-    ],
-  }
-
-  const userRoute = {
-    path: r3Const.path.user , element: <UserV />,
-    children: [
-      { path: 'create', element: <UserCreateV /> },
-      { path: 'createToken', element: <UserCreateTokenV /> },
+      {
+        path: r3Const.path.context , element: <ContextV />,
+        children: [
+          { path: 'contextFoo', element: <ContextFooV /> },
+          { path: 'contextDynamic', element: <ContextDynamicV /> },
+        ],
+      },
+      {
+        path: r3Const.path.hook , element: <HookV />,
+        children: [
+          { path: 'useCustom', element: <HookUseCustomV /> },
+          { path: 'useCallback', element: <HookUseCallbackV /> },
+          { path: 'useMemo', element: <HookUseMemoV /> },
+          { path: 'useReducerInput', element: <HookUseReducerInputV /> },
+          { path: 'useReducer', element: <HookUseReducerV /> },
+          { path: 'useEffect', element: <HookUseEffectV /> },
+          { path: 'useState', element: <HookUseStateV /> },
+        ],
+      },
+      {
+        path: r3Const.path.immutable , element: <ImmutableV />,
+        children: [
+          { path: 'legacy', element: <ImmutableLegacyV /> },
+          { path: 'immer', element: <ImmutableImmerV />},
+        ],
+      },
+      {
+        path: r3Const.path.middleware , element: <MiddlewareV />,
+        children: [
+          { path: 'counter', element: <MiddlewareCounterContainerV /> },
+          { path: 'counterThunk', element:<MiddlewareCounterThunkContainerV /> },
+          { path: 'counterSaga', element: <MiddlewareCounterSagaContainerV /> },
+          { path: 'apiThunk', element: <MiddlewareApiThunkContainerV /> },
+          { path: 'apiSaga', element: <MiddlewareApiSagaContainerV /> },
+        ],
+      },
+      {
+        path: r3Const.path.optima , element: <OptimaV />,
+        children: [
+          { path: 'scroll', element: <OptimaScrollV /> },
+          { path: 'list', element: <OptimaListV /> },
+        ],
+      },
+      {
+        path: r3Const.path.redux , element: <ReduxV />,
+        children: [
+          { path: 'reduxCounter', element: <ReduxCounterV /> },
+          { path: 'reduxTodo', element: <ReduxTodoV /> },
+        ],
+      },
+      {
+        path: r3Const.path.route , element: <RouteRouteV />,
+        children: [
+          { path: 'err', element: <RouteMultiV /> },
+          { path: 'na', element: <RouteMultiV /> },
+          { path: 'history', element: <RouteHistoryV /> },
+          {
+            path: 'navLink', element: <RouteNavLinkV />,
+            children: [
+              { path: 'foo', element: <RouteNavLinkV /> },
+              { path: 'bar', element: <RouteNavLinkV /> },
+            ],
+          },
+          {
+            path: 'switch', element: <RouteSwitchV />,
+            children: [
+              { path: 'foo', element: <RouteSwitchV /> },
+              { path: 'bar', element: <RouteSwitchV /> },
+            ],
+          },
+          { path: 'urlParam/:foo', element: <RouteUrlParamV /> },
+          { path: 'urlQuery', element: <RouteUrlQueryV /> },
+        ],
+      },
+      {
+        path: r3Const.path.split , element: <SplitV />,
+        children: [
+          { path: 'state', element: <SplitStateV /> },
+          { path: 'lazy', element: <SplitLazyV /> },
+          { path: 'loadableComponent', element: <SplitLoadableComponentV /> },
+        ],
+      },
+      {
+        path: r3Const.path.style , element: <StyleV />,
+        children: [
+          { path: 'css', element: <StyleCssV /> },
+          { path: 'cssMod', element: <StyleCssModV /> },
+          { path: 'responsive', element: <StyleResponsiveV /> },
+          { path: 'userCreate', element: <StyleUserCreateV /> },
+        ],
+      },
+      {
+        path: r3Const.path.user , element: <UserV />,
+        children: [
+          { path: 'create', element: <UserCreateV /> },
+          { path: 'createToken', element: <UserCreateTokenV /> },
+        ],
+      },
     ],
   }
 
   return useRoutes([
     indexRoute,
-    articleRoute,
-    asyncRoute,
-    contextRoute,
-    hookRoute,
-    immutableRoute,
-    middlewareRoute,
-    optimaRoute,
-    reduxRoute,
-    routeRoute,
-    splitRoute,
-    styleRoute,
-    userRoute,
   ])
 }
 

@@ -1,16 +1,19 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const RouteHistoryV = ({history}) => {
+const RouteHistoryV = () => {
+
+  const nav = useNavigate()
 
   const goBack = () => {
-    history.goBack()
+    nav(-1)
   }
 
   const goRoot = () => {
-    history.push('/')
+    nav('/')
   }
 
-  useEffect(() => history.block('foo'), [history]) //페이지 이탈시 확인
+  // useEffect(() => history.block('foo'), [history]) //페이지 이탈시 확인
 
   return (
     <div>

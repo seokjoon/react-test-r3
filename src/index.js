@@ -13,7 +13,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import ReduxThunk from 'redux-thunk'
 import createMiddlewareSaga from 'redux-saga'
 import userRedux from './redux/ducks/user/userRedux'
-import RouteV from './views/Route/RouteV'
+import R3Route from './helpers/r3Route'
 
 
 //const store = createStore(rootReducer)
@@ -52,7 +52,7 @@ ReactDOM.render(
   // </React.StrictMode}>,
   <Provider store={store}>
     <BrowserRouter>
-      <RouteV />
+      <R3Route />
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')
