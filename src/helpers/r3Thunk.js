@@ -23,7 +23,7 @@ const r3Thunk = {
           type: FAIL,
         })
         dispatch(r3ApiLoadingRedux.start(type))
-        throw e
+        //throw e
       }
     }
   },
